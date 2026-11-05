@@ -14,7 +14,7 @@
   --encre:#262626;
   --doux:rgba(38,38,38,.7);
   --fil:#3D50A6;
-  --action:#FF5A36;
+  --action:#FFD84D;
   --serif:'Young Serif', Georgia, 'Times New Roman', serif;
   --sans:'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono:'M PLUS 1 Code', ui-monospace, Menlo, Consolas, monospace;
@@ -37,8 +37,8 @@ nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:cente
 h1{margin:0;font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.2}
 .label{margin:0;font-family:var(--mono);font-size:12px;color:var(--fil)}
 p{margin:0}
-.cta{align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--action);color:var(--encre);text-decoration:none;font-family:var(--mono);font-size:14px;transition:transform .2s ease}
-.cta:hover{transform:translateY(-2px)}
+.cta{align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--action);color:var(--encre);border:1.5px solid var(--encre);box-shadow:0 2px 0 var(--encre);text-decoration:none;font-family:var(--mono);font-size:14px;transition:transform .15s ease, box-shadow .15s ease}
+.cta:hover{transform:translateY(-1px);box-shadow:0 3px 0 var(--encre)}
 .frise{max-width:640px;margin:0 auto;padding-block:32px 120px;font-family:var(--mono);font-size:13px;line-height:1.55}
 .frise .nom{text-align:center;padding-bottom:40px}
 .frise .nom p:first-child{font-family:var(--serif);font-size:24px}
@@ -62,7 +62,7 @@ footer{border-top:1px solid var(--fil);padding-block:20px 32px;display:flex;flex
 <a href="./" class="logo">oscar.</a>
 <nav aria-label="Navigation">
 <a href="./">Accueil</a>
-<a href="./#contact">Contact</a>
+<a href="./#lettre">Ma vidéo</a>
 </nav>
 </header>
 
@@ -84,7 +84,7 @@ footer{border-top:1px solid var(--fil);padding-block:20px 32px;display:flex;flex
 <p>[Ton texte. Ce que tu fais pour tes clients, à la première personne, comme une lettre.]</p>
 <p class="label">Oscar, en dehors</p>
 <p>[Ton texte. Ce que tu aimes, d'où tu viens, ce qui te fait écrire.]</p>
-<a href="./#contact" class="cta">M'écrire</a>
+<a href="./#lettre" class="cta">Recevoir ma vidéo</a>
 </div>
 </section>
 
