@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oscar Marchand · À propos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qui je suis, et ce que je fais pour mes clients.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Work+Sans:wght@400;500&amp;family=M+PLUS+1+Code&amp;display=swap">
+<style>
+/* Mise en page : un dessin et une lettre côte à côte, puis une frise tapée à la machine */
+:root{
+  --fond:#F3F0E8;
+  --encre:#262626;
+  --doux:rgba(38,38,38,.7);
+  --fil:#3D50A6;
+  --action:#FF5A36;
+  --serif:'Young Serif', Georgia, 'Times New Roman', serif;
+  --sans:'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'M PLUS 1 Code', ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--fil);outline-offset:4px;border-radius:4px}
+.gutter{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1040px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.logo{font-family:var(--serif);font-size:26px;color:var(--fil);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transform:rotate(-4deg)}
+nav{display:flex;gap:20px;font-family:var(--mono);font-size:13px}
+nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.duo{display:flex;flex-wrap:wrap;gap:48px 64px;align-items:center;padding-block:48px 96px}
+.duo > div{flex:1 1 340px;min-width:0}
+.dessin{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.texte{display:flex;flex-direction:column;gap:20px}
+h1{margin:0;font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.2}
+.label{margin:0;font-family:var(--mono);font-size:12px;color:var(--fil)}
+p{margin:0}
+.cta{align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--action);color:var(--encre);text-decoration:none;font-family:var(--mono);font-size:14px;transition:transform .2s ease}
+.cta:hover{transform:translateY(-2px)}
+.frise{max-width:640px;margin:0 auto;padding-block:32px 120px;font-family:var(--mono);font-size:13px;line-height:1.55}
+.frise .nom{text-align:center;padding-bottom:40px}
+.frise .nom p:first-child{font-family:var(--serif);font-size:24px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);column-gap:18px}
+.row .date{text-align:right;padding:4px 0 28px}
+.row .quoi{padding:4px 0 28px}
+.axe{position:relative}
+.axe::before{content:'';position:absolute;left:13px;top:0;bottom:0;width:1.5px;background:var(--encre)}
+.axe::after{content:'';position:absolute;left:9px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--encre)}
+.axe.bout::before{bottom:auto;height:8px}
+.doux{color:var(--doux)}
+footer{border-top:1px solid var(--fil);padding-block:20px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-family:var(--mono);font-size:12px;color:var(--doux)}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+</style>
+</head>
+<body>
+<div class="gutter">
+<div class="wrap">
+
+<header class="top">
+<a href="./" class="logo">oscar.</a>
+<nav aria-label="Navigation">
+<a href="./">Accueil</a>
+<a href="./#contact">Contact</a>
+</nav>
+</header>
+
+<section class="duo">
+<div>
+<svg viewBox="0 0 400 340" width="100%" role="img" aria-label="Un bureau dessiné au trait, avec un ordinateur, un café, un carnet et un skate posé sous la table"><g class="dessin">
+<path d="M40 40 L150 36 L152 130 L42 132 Z"/><path d="M96 38 L97 131 M41 86 L151 83"/>
+<path d="M20 250 Q200 245 380 250"/><path d="M60 249 L54 330 M340 249 L346 330"/>
+<path d="M130 168 L232 162 L238 240.04 L132 240.46 Z"/><path d="M150 190 Q175 188 205 189 M150 202 Q170 201 195 202 M150 214 Q168 213 186 214"/>
+<path d="M108 248.2 L262 247.8 L248 240 L122 240.5 Z"/>
+<path d="M282 214 Q299 212 316 214 Q315 236 305 244 Q299 252.6 293 244 Q283 236 282 214 Z"/><path d="M315.24 222.24 Q327 222 325 229 Q323 235 312.18 233.97"/><path d="M293 204 Q289 198 293 192 Q297 186 293 180 M304 204 Q300 198 304 192 Q308 186 304 180"/>
+<path d="M34 246 L92 240 L100 248.27 L42 249.43 Z"/><path d="M52 243 L86 233 L87 236 L53 246 Z"/>
+<path d="M150 322 Q146 314 156 314 L250 314 Q260 314 256 322 Q252 326 244 326 L162 326 Q154 326 150 322 Z"/><circle cx="172" cy="330" r="4"/><circle cx="236" cy="330" r="4"/>
+</g></svg>
+</div>
+<div class="texte">
+<h1>À propos</h1>
+<p class="label">Oscar, au travail</p>
+<p>[Ton texte. Ce que tu fais pour tes clients, à la première personne, comme une lettre.]</p>
+<p class="label">Oscar, en dehors</p>
+<p>[Ton texte. Ce que tu aimes, d'où tu viens, ce qui te fait écrire.]</p>
+<a href="./#contact" class="cta">M'écrire</a>
+</div>
+</section>
+
+<section class="frise" aria-label="Parcours">
+<div class="nom">
+<p>Oscar Marchand</p>
+<p class="doux" style="margin-top:6px">Tours, puis Paris</p>
+</div>
+
+<div class="row"><span class="date">Aujourd'hui</span><span class="axe"></span><span class="quoi">Copywriting freelance, depuis 2024<br>Enseignement, Sorbonne<br>ESCP, Master in Management, en césure</span></div>
+<div class="row"><span class="date">2026</span><span class="axe"></span><span class="quoi">Founders Associate<br>Nao Labs (YC X25)<br>Paris</span></div>
+<div class="row"><span class="date" style="padding-bottom:0">2024 – 2025</span><span class="axe"></span><span class="quoi" style="padding-bottom:0">Échange, Dean's List<br>Columbia University<br>New York</span></div>
+<div class="row">
+<span class="date doux" style="align-self:center;padding:0">l'Atlantique,<br>aller-retour</span>
+<svg width="28" height="170" viewBox="0 0 28 170" aria-hidden="true"><path d="M14 0 L14 14 L16 20 L15 28 L20 36 L18 44 L23 54 L21 62 L24 72 L19 82 L14 86 L9 92 L5 100 L8 108 L12 114 L11 122 L15 132 L14 146 L14 170" class="dessin" style="stroke-width:1.5"/></svg>
+<span></span>
+</div>
+<div class="row"><span class="date">2022 – 2025</span><span class="axe"></span><span class="quoi">Licence d'économie, top 2 %<br>Paris 1 Panthéon-Sorbonne<br>Paris</span></div>
+<div class="row"><span class="date" style="padding-bottom:0">Avant</span><span class="axe bout"></span><span class="quoi" style="padding-bottom:0">Grandi près de Tours<br>Paris à 16 ans</span></div>
+</section>
+
+<footer>
+<span>Oscar Marchand EI · SIRET [à compléter]</span>
+<a href="#mentions">Mentions légales</a>
+</footer>
+
+</div>
+</div>
+</body>
+</html>
