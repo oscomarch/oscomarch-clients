@@ -424,11 +424,11 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
     if (val('f-honey')) return;
     bouton.disabled = true;
     bouton.textContent = 'Envoi…';
-    var sujet = 'Lettre de ' + val('f-prenom') + ' (' + val('f-marque') + ')';
+    var sujet = 'Nouvelle lettre · ' + val('f-prenom') + ', ' + val('f-marque') + (val('f-audience') ? ' · ' + val('f-audience') + ' abonnés' : '');
     var data = {
       access_key: CLE_WEB3FORMS,
       subject: sujet,
-      from_name: 'clients.oscomarch.com',
+      from_name: 'Lettres clients',
       replyto: val('f-email'),
       botcheck: '',
       'La lettre': texteLettre(),
