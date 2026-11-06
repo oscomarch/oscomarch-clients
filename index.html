@@ -431,16 +431,16 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
       from_name: 'clients.oscomarch.com',
       replyto: val('f-email'),
       botcheck: '',
-      name: val('f-prenom'),
-      email: val('f-email'),
-      marque: val('f-marque'),
-      role: val('f-role'),
-      audience: val('f-audience'),
-      canal: val('f-canal'),
-      frustration: val('f-frustration'),
-      envie: val('f-envie'),
-      exemple: val('f-exemple'),
-      lettre: texteLettre()
+      'La lettre': texteLettre(),
+      'Prénom': val('f-prenom'),
+      'Email': val('f-email'),
+      'Marque': val('f-marque'),
+      'Rôle': val('f-role') || '…',
+      'Taille de l\'audience': val('f-audience') || '…',
+      'Canal': val('f-canal') || '…',
+      'Ce qui le frustre': val('f-frustration') || '…',
+      'Ce qu\'il aimerait': val('f-envie'),
+      'Un de ses derniers emails': val('f-exemple') || '…'
     };
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
