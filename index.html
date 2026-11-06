@@ -383,6 +383,8 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
   var bouton = document.getElementById('bouton-envoyer');
   var envoi = document.getElementById('envoi');
   var ADRESSE = 'oscomarch@gmail.com';
+  /* Clé Web3Forms : publique par conception, elle dit seulement à quelle adresse envoyer */
+  var CLE_WEB3FORMS = '';
 
   prenom.addEventListener('input', function () {
     signature.textContent = prenom.value.trim() || '…';
@@ -422,10 +424,13 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
     if (val('f-honey')) return;
     bouton.disabled = true;
     bouton.textContent = 'Envoi…';
+    var sujet = 'Lettre de ' + val('f-prenom') + ' (' + val('f-marque') + ')';
     var data = {
-      _subject: 'Lettre de ' + val('f-prenom') + ' (' + val('f-marque') + ')',
-      _template: 'box',
-      _replyto: val('f-email'),
+      access_key: CLE_WEB3FORMS,
+      subject: sujet,
+      from_name: 'clients.oscomarch.com',
+      replyto: val('f-email'),
+      botcheck: '',
       name: val('f-prenom'),
       email: val('f-email'),
       marque: val('f-marque'),
@@ -437,20 +442,21 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
       exemple: val('f-exemple'),
       lettre: texteLettre()
     };
-    fetch('https://formsubmit.co/ajax/' + ADRESSE, {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
     }).then(function (r) {
-      if (!r.ok) throw new Error('envoi');
-      return r.json();
-    }).then(function (res) {
-      if (String(res.success) !== 'true') throw new Error('envoi');
+      return r.json().catch(function () { return {}; }).then(function (res) {
+        if (!r.ok || res.success !== true) throw new Error(res.message || ('HTTP ' + r.status));
+      });
+    }).then(function () {
       montrerEnvoi();
-    }).catch(function () {
+    }).catch(function (err) {
+      try { console.warn('Lettre non envoyée :', err && err.message); } catch (e2) {}
       bouton.disabled = false;
       bouton.textContent = 'Envoyer ma lettre';
-      var lien = 'mailto:' + ADRESSE + '?subject=' + encodeURIComponent(data._subject) + '&body=' + encodeURIComponent(texteLettre());
+      var lien = 'mailto:' + ADRESSE + '?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(texteLettre());
       erreur.innerHTML = '';
       erreur.appendChild(document.createTextNode("La lettre n'est pas partie. Vous pouvez "));
       var a = document.createElement('a');
