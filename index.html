@@ -84,7 +84,22 @@ h2{margin:0;font-family:var(--mono);font-size:13px;font-weight:400;color:var(--d
 .grand{font-family:var(--serif);font-size:clamp(23px, 2.6vw, 28px);line-height:1.38;text-wrap:balance}
 .prix-chiffre{font-size:clamp(30px, 3.4vw, 38px);line-height:1.2}
 .petit{font-size:16px;color:var(--doux)}
-.citation{display:none}
+/* Preuves : le détail et les avis */
+details.detail,details.detail:last-of-type{border:1px solid var(--ligne);border-radius:14px;background:var(--papier);padding:0 20px}
+details.detail summary{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--fil)}
+details.detail[open]{padding-bottom:20px}
+details.detail p{padding:0;margin:0 0 14px;color:var(--encre)}
+details.detail h3{margin:22px 0 8px;font-family:var(--mono);font-size:13px;font-weight:400;color:var(--doux)}
+.chiffres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 0}
+.chiffres div{border-top:1px solid var(--ligne);padding-top:8px}
+.chiffres b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.3}
+.chiffres span{font-family:var(--mono);font-size:12px;color:var(--doux)}
+.objet{font-family:var(--serif)}
+.suite{font-family:var(--serif);font-size:clamp(20px, 2.3vw, 24px);line-height:1.4;margin-top:16px;text-wrap:balance}
+.avis{display:flex;flex-direction:column;gap:16px}
+figure.citation{margin:0;padding:18px 20px;border:1px solid var(--ligne);border-radius:14px;background:var(--papier);display:flex;flex-direction:column;gap:10px}
+.citation blockquote{margin:0;font-family:var(--serif);font-size:19px;line-height:1.45}
+.citation figcaption{font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--doux)}
 .place{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;font-family:var(--mono);font-size:13px;padding:6px 14px;border:1.5px solid var(--encre);border-radius:999px}
 .place-pt{width:8px;height:8px;border-radius:50%;background:var(--fil)}
 
@@ -306,14 +321,53 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <p>948 of them chose the annual plan. That's €121,000 paid upfront, and twelve months of customers who stay.</p>
 <p>Behind it, 31 segments and 183 emails, each one written for a single group. 128,877 emails sent, and only 0.13% unsubscribed.</p>
 <p>The lines that worked best named the exact amount each customer was about to lose, or the price they could keep. Up to five times more clicks than the campaign average.</p>
-<p class="ph">A quote from Abby. Ask Lou Sernaglia or Benjamin for two lines, in their own words, about what changed when you took over. Then put it in the block below and remove this note.</p>
-<!-- Témoignage : décommenter et remplir quand la phrase arrive
+<details class="detail">
+<summary>See the full breakdown</summary>
+<p>Abby is an invoicing app for freelancers in France. A subscription business, so the same problem as yours. Getting someone to pay once is hard. Getting them to stay is where the money is.</p>
+<p>The goal this summer was simple. Get free users to pay, and get as many as possible onto the annual plan.</p>
+<h3>The numbers</h3>
+<div class="chiffres">
+<div><b>4 weeks</b><span>of campaign</span></div>
+<div><b>31</b><span>segments, each with its own emails</span></div>
+<div><b>183</b><span>emails sent, out of 205 written</span></div>
+<div><b>128,877</b><span>sends, 99.81% delivered</span></div>
+<div><b>1,514</b><span>new subscribers</span></div>
+<div><b>1,197</b><span>of them paying for the first time</span></div>
+<div><b>57.3 a day</b><span>new paid subscriptions, against 41.2 the month before</span></div>
+<div><b>€132,187</b><span>collected</span></div>
+<div><b>948</b><span>annual plans, 92% of the money</span></div>
+<div><b>0.13%</b><span>unsubscribed</span></div>
+</div>
+<h3>What worked</h3>
+<p>Two subject lines did most of the work. <span class="objet">“Lock in your price before it goes back up.”</span> And <span class="objet">“€37.80 sitting idle on your subscription.”</span> 21.3% and 17.8% of the people who opened them clicked. The campaign average was 3.99%.</p>
+<p>Both do the same thing. They put an exact number on what the reader is about to lose. Nobody wants to leave money on the table.</p>
+<h3>What didn't</h3>
+<p>One email was opened by almost half the people who got it, 49.7%. Then barely anyone clicked, 1.9%. The subject line promised more than the email gave. A big open rate means nothing on its own, and I'd rather tell you than hide it.</p>
+<h3>What I won't pretend</h3>
+<p>This is a comparison with the month before, not a controlled test. Some of these people would have subscribed anyway. And most email tools are generous when they count which sales came from an email.</p>
+<p>That's exactly why, with you, a small group of customers doesn't get the new emails from day one. So the number we look at is the real one.</p>
+</details>
+
+<p class="suite">Black Friday, then January, then the summer.<br>Three campaigns in a row, with two different heads of marketing.</p>
+
+<div class="avis">
 <figure class="citation">
-<blockquote>« … »</blockquote>
-<figcaption class="mono doux">Prénom Nom · rôle · Abby</figcaption>
+<blockquote>“Oscar wrote the sale campaign from A to Z, and handled the segmentation too. I recommend him without hesitation.”</blockquote>
+<figcaption>Benjamin Gardien · co-founder and CMO, Abby · review on Malt, translated from French</figcaption>
 </figure>
--->
-<!-- Plus tard : les vrais chiffres Abby (ouvertures, conversions, avant / après) et la première étude de cas rétention -->
+<figure class="citation">
+<blockquote>“I'm really happy with what you delivered. It's exactly what I needed.”</blockquote>
+<figcaption>Lou Sernaglia · CMO, Abby, after Black Friday · translated from French<br>A few weeks later, she gave me the whole January campaign.</figcaption>
+</figure>
+<figure class="citation">
+<blockquote>“Overall it was really positive. Open rates were above our usual averages.”</blockquote>
+<figcaption>Benjamin Gardien · after the summer campaign · translated from French</figcaption>
+</figure>
+<figure class="citation">
+<blockquote>“Oscar understood what we needed the first time, delivered on time, and came up with wording that was original and to the point.”</blockquote>
+<figcaption>Eric · Vivre Libre · review on Malt, translated from French</figcaption>
+</figure>
+</div>
 <p class="petit">I've been writing for brands since I was 16, between France and the US. I've also worked on growth for startups like <a href="https://fastflo.ai">Fastflo</a>, <a href="https://getnao.io">Nao Labs</a> (Y&nbsp;Combinator) and <a href="https://astera.holdings">Astera</a>.</p>
 </section>
 
