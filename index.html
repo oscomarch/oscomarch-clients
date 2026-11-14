@@ -113,28 +113,6 @@ h2{margin:0;font-family:var(--mono);font-size:13px;font-weight:400;color:var(--d
   .exemples{grid-template-columns:1fr}
 }
 
-/* Lecture en blocs courts : frise, chiffres, colonnes */
-.lignes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.lignes li{position:relative;padding-left:26px}
-.lignes li::before{content:'';position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--fil)}
-.frise{list-style:none;margin:0;padding:0;border-left:1.5px solid var(--fil);display:flex;flex-direction:column;gap:18px}
-.frise li{position:relative;display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;padding-left:22px}
-.frise li::before{content:'';position:absolute;left:-6px;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--fond);border:1.5px solid var(--fil)}
-.frise .quand{font-family:var(--mono);font-size:13px;color:var(--fil);padding-top:3px}
-.frise b{font-weight:500}
-.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.carte{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
-.carte .mono{color:var(--fil)}
-.carte.terne .mono{color:var(--doux)}
-.chiffres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
-.chiffres div{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px}
-.chiffres b{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,32px);line-height:1.15}
-.chiffres span{font-family:var(--mono);font-size:12px;color:var(--doux);line-height:1.5}
-@media (max-width:520px){
-  .frise li{grid-template-columns:1fr;gap:2px}
-  .duo,.chiffres{grid-template-columns:1fr}
-}
-
 /* Questions */
 details{border-top:1px solid var(--fil)}
 details:last-of-type{border-bottom:1px solid var(--fil)}
@@ -280,12 +258,8 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <h2>The problem</h2>
 </div>
 <p class="grand type">Every new customer costs more than the last.<br>Most brands still let them leave after one order.</p>
-<ul class="lignes">
-<li>The budget goes to ads.</li>
-<li>The people who already bought get a newsletter now and then.</li>
-<li>They buy once and forget you. Subscribers pause, then cancel.</li>
-<li>Nobody notices, because nobody is looking.</li>
-</ul>
+<p>The budget goes to ads. The people who already bought get a newsletter now and then, when someone finds the time.</p>
+<p>So they buy once and forget you. Subscribers pause, then cancel. Nobody notices, because nobody is looking.</p>
 <p>But you already have the hardest part. People who know you, and who have often trusted you already. What's missing is the right way to talk to them.</p>
 </section>
 
@@ -296,11 +270,11 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 </div>
 <p class="grand type">I run the whole thing.<br>Not just the emails.</p>
 <ul class="blocs">
-<li><span class="lab">Segmentation</span><p>Who your customers really are, and what each group needs to hear.</p></li>
+<li><span class="lab">Segmentation</span><p>Who your customers really are, group by group, and what each group needs to hear.</p></li>
 <li><span class="lab">Lifecycle flows</span><p>After the first order. Before the bag runs out. When someone drifts away. Before a subscriber cancels.</p></li>
-<li><span class="lab">Campaigns</span><p>Drops, launches, seasons. Planned around the flows.</p></li>
-<li><span class="lab">Testing</span><p>Every send is a test. Who clicks, who buys, who comes back.</p></li>
-<li><span class="lab">Reporting</span><p>One clear number, the one you judge me on.</p></li>
+<li><span class="lab">Campaigns</span><p>Drops, launches, seasons. Planned around the flows, not on top of them.</p></li>
+<li><span class="lab">Testing</span><p>Every send is also a test. I look at who clicks, who buys, who comes back, and I take a lesson from it for the next ones.</p></li>
+<li><span class="lab">Reporting</span><p>One clear number, the one you judge me on. Every month.</p></li>
 <li><span class="lab">The writing</span><p>Every email, every message. Written by me.</p></li>
 </ul>
 <p class="petit"><em>I work with the audience you already have. To find a new one, I'll introduce you to the right people.</em></p>
@@ -312,19 +286,10 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <h2>Why me</h2>
 </div>
 <p class="grand type">People who build these systems rarely write well. People who write well rarely touch the data.<br>I do both.</p>
-<p>My dad is a novelist. Writing came first.</p>
-<ol class="frise">
-<li><span class="quand">At 15</span><p>I start writing, and I never stop.</p></li>
-<li><span class="quand">At 16</span><p>I move to Paris on my own. Writing emails for brands pays for it, and for my studies.</p></li>
-<li><span class="quand">La Sorbonne</span><p>A degree in economics, <b>top 2% of my year</b>.</p></li>
-<li><span class="quand">New York</span><p><b>Columbia</b>, on the Dean's List. I win the Nasdaq and Columbia options trading competition.</p></li>
-<li><span class="quand">Today</span><p>A master's at <b>ESCP</b>. And I teach microeconomics and statistics at La Sorbonne.</p></li>
-</ol>
-<div class="duo">
-<div class="carte"><p class="mono">The data</p><p>Tells me who should get which message, and when.</p></div>
-<div class="carte"><p class="mono">The writing</p><p>Makes them open it, and buy.</p></div>
-</div>
-<p>You need both. Most people only bring one. And I write as one of your customers. A skater to skaters, a coffee lover to coffee lovers.</p>
+<p>My dad is a novelist. I started writing at 15, and I never stopped. At 16, I moved to Paris on my own. Writing emails for brands is what paid for it, and for my studies.</p>
+<p>Then came the numbers. A degree in economics at La Sorbonne, in the top 2% of my year. Columbia, in New York, on the Dean's List. I won the Nasdaq and Columbia options trading competition there. Now a master's at ESCP. And I teach microeconomics and statistics at La Sorbonne, part-time.</p>
+<p>The data tells me who should get which message, and when. The writing is what makes them open it, and buy. You need both. Most people only bring one.</p>
+<p>And I write as one of your customers. A skater to skaters, a coffee lover to coffee lovers.</p>
 </section>
 
 <section id="resultats">
@@ -334,12 +299,8 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 </div>
 <p class="mono doux">What happened with one of the clients I work with</p>
 <p class="grand type">Over €500,000 in sales,<br>across 3 campaigns.</p>
-<div class="chiffres">
-<div><b>5</b><span>groups at the start</span></div>
-<div><b>15+</b><span>segments, each with its own message</span></div>
-<div><b>€500K+</b><span>in sales, over 3 campaigns</span></div>
-</div>
-<p>Inside the same group, people reacted in completely different ways. So we went finer. We tested, adjusted, started again, until it worked for every group.</p>
+<p>Abby talked to its customers in five groups. Campaign after campaign, we saw that people inside the same group reacted in completely different ways.</p>
+<p>So we went finer, up to more than fifteen segments, each with its own message. We tested, adjusted, started again. Until it worked for every group.</p>
 <p class="ph">A quote from Abby. Ask Lou Sernaglia or Benjamin for two lines, in their own words, about what changed when you took over. Then put it in the block below and remove this note.</p>
 <!-- Témoignage : décommenter et remplir quand la phrase arrive
 <figure class="citation">
@@ -348,7 +309,7 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 </figure>
 -->
 <!-- Plus tard : les vrais chiffres Abby (ouvertures, conversions, avant / après) et la première étude de cas rétention -->
-<p class="petit">I've also worked on growth for startups like <a href="https://fastflo.ai">Fastflo</a>, <a href="https://getnao.io">Nao Labs</a> (Y&nbsp;Combinator) and <a href="https://astera.holdings">Astera</a>.</p>
+<p class="petit">I've been writing for brands since I was 16, between France and the US. I've also worked on growth for startups like <a href="https://fastflo.ai">Fastflo</a>, <a href="https://getnao.io">Nao Labs</a> (Y&nbsp;Combinator) and <a href="https://astera.holdings">Astera</a>.</p>
 </section>
 
 <section id="comment">
@@ -361,14 +322,13 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <li><span class="nom">You write to me</span><p>Two minutes. Your brand, your customers, what you'd like to change.</p></li>
 <li><span class="nom">A free audit, on video</span><p>I go through what you send today. I show you what I'd change, and roughly what you're leaving on the table.</p></li>
 <li><span class="nom">A call</span><p>If it makes sense, for both of us.</p></li>
-<li><span class="nom">We measure first</span><p>We pick the one number that matters for your brand, and measure where you stand.</p>
-<p>A small group of customers, picked at random, doesn't get the new emails. So we both see what the system really adds, not what the season did.</p>
+<li><span class="nom">We measure first</span><p>We pick the one number that matters for your brand, and we measure where you stand. A small group of customers, picked at random, doesn't get the new emails. That way we both see what the system really adds, and not what the season or your ads did.</p>
 <div class="exemples" aria-label="Examples of the number, set per brand">
 <div><b>A roaster with subscriptions</b>often churn, and what a subscriber is worth over time</div>
 <div><b>A skate shop</b>often how many customers buy again, and what email brings in</div>
 </div>
 </li>
-<li><span class="nom">I build and run it</span><p>I dig into your emails, numbers and reviews. I call a few customers. Then I build, send and test, every week.</p></li>
+<li><span class="nom">I build and run it</span><p>I dig into everything. Past emails, numbers, reviews, questions to support. I call a few of your customers. Then I build, I send, I test, every week.</p></li>
 </ol>
 <!-- Le paiement : garder ce bloc facile à changer, aucun chiffre tant que ce n'est pas fixé -->
 <div class="paye" id="paiement">
@@ -376,7 +336,7 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <p>A fixed monthly fee to run the system. Plus a share of the revenue above the baseline we set together.</p>
 <p>If it doesn't work, I earn less. That's the point.</p>
 </div>
-<p>Every month, one number, what we learned, and the plan for next month. You keep control, without the load.</p>
+<p>Every month, you get one number, what we learned about your customers, and the plan for the next month. You can write to me anytime. You keep control, without the load.</p>
 </section>
 
 <section id="pourqui">
@@ -385,27 +345,21 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <h2>Who it's for</h2>
 </div>
 <p class="grand type">This isn't for every brand.<br>That's on purpose.</p>
-<p>It's for brands people come back to. Mostly specialty coffee roasters with subscriptions, where churn is the business. And skate shops and e-shops. I know these customers from the inside.</p>
-<div class="duo">
-<div class="carte">
-<p class="mono">What I need from you</p>
+<p>It's for brands people come back to, again and again. Mostly specialty coffee roasters with subscriptions, where churn is the business. And skate shops and e-shops. I've skated for years and coffee has become an obsession, so I know these customers from the inside.</p>
+<p class="mono doux">What I need from you</p>
 <ul class="conditions">
-<li>Around 10,000 contacts or more</li>
+<li>A customer base and an email list, around 10,000 contacts or more</li>
 <li>A product people buy again</li>
-<li>Shopify, with Klaviyo or similar</li>
-<li>Access to your data</li>
-<li>A few months, at least</li>
+<li>Shopify, with Klaviyo or a similar tool</li>
+<li>Access to your data, because results need a baseline</li>
+<li>A few months at least, because retention takes time to show</li>
 </ul>
-</div>
-<div class="carte terne">
-<p class="mono">Not for</p>
+<p class="mono doux">Not for</p>
 <ul class="conditions pas-pour">
-<li>Brands with no customers yet</li>
-<li>Products people buy only once</li>
+<li>Very early brands with no customers yet</li>
+<li>Products people only buy once</li>
 </ul>
-</div>
-</div>
-<p>I work with three brands at a time, no more. And I choose them.</p>
+<p>I work with three brands at a time, no more. And I choose them. That way, each one gets my full attention.</p>
 </section>
 
 <section id="questions">
