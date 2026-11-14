@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Oscar Marchand · À propos</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Qui je suis, et ce que je fais pour mes clients.">
+<meta name="description" content="Qui je suis, d'où je viens, et ce que je fais pour mes clients.">
+<link rel="alternate" hreflang="en" href="https://clients.oscomarch.com/about">
+<link rel="alternate" hreflang="fr" href="https://clients.oscomarch.com/a-propos">
 <link rel="preload" href="fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -16,6 +18,7 @@
   --doux:rgba(38,38,38,.7);
   --fil:#3D50A6;
   --action:#FFD84D;
+  --papier:#FFFDF7;
   --serif:'Young Serif', Georgia, 'Times New Roman', serif;
   --sans:'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono:'M PLUS 1 Code', ui-monospace, Menlo, Consolas, monospace;
@@ -30,7 +33,12 @@ a:focus-visible{outline:2px solid var(--fil);outline-offset:4px;border-radius:4p
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
 .logo{font-family:var(--serif);font-size:26px;color:var(--fil);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transform:rotate(-4deg)}
 nav{display:flex;gap:20px;font-family:var(--mono);font-size:13px}
+nav{align-items:center}
 nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.langues{display:inline-flex;gap:2px;padding:3px;border:1.5px solid var(--encre);border-radius:999px;background:var(--papier);font-size:12px;line-height:1}
+.langues a{min-width:42px;min-height:34px;padding:0 10px;justify-content:center;border-radius:999px;color:var(--doux);transition:background .2s ease, color .2s ease}
+.langues a:hover{color:var(--encre)}
+.langues a[aria-current]{background:var(--encre);color:var(--fond)}
 .duo{display:flex;flex-wrap:wrap;gap:48px 64px;align-items:center;padding-block:48px 96px}
 .duo > div{flex:1 1 340px;min-width:0}
 .dessin{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -60,10 +68,11 @@ footer{border-top:1px solid var(--fil);padding-block:20px 32px;display:flex;flex
 <div class="wrap">
 
 <header class="top">
-<a href="./" class="logo">oscar.</a>
+<a href="fr" class="logo">oscar.</a>
 <nav aria-label="Navigation">
-<a href="./">Accueil</a>
-<a href="./#lettre">Ma vidéo</a>
+<a href="fr">Accueil</a>
+<a href="fr#lettre">Mon audit</a>
+<span class="langues" role="group" aria-label="Langue"><a href="about" lang="en" hreflang="en" title="English">EN</a><a href="a-propos" aria-current="true" lang="fr" hreflang="fr">FR</a></span>
 </nav>
 </header>
 
@@ -82,10 +91,13 @@ footer{border-top:1px solid var(--fil);padding-block:20px 32px;display:flex;flex
 <div class="texte">
 <h1>À propos</h1>
 <p class="label">Oscar, au travail</p>
-<p>[Ton texte. Ce que tu fais pour tes clients, à la première personne, comme une lettre.]</p>
+<p>Je m'occupe de la rétention de torréfacteurs de café de spécialité et de skate shops. Autrement dit, des clients qu'une marque a déjà. Je fais en sorte qu'ils reviennent, qu'ils restent abonnés, et qu'ils dépensent plus avec le temps.</p>
+<p>Je construis le système, j'écris chaque email, et je regarde les chiffres chaque semaine. Je travaille avec trois marques à la fois, et je suis payé sur ce qui change.</p>
 <p class="label">Oscar, en dehors</p>
-<p>[Ton texte. Ce que tu aimes, d'où tu viens, ce qui te fait écrire.]</p>
-<a href="./#lettre" class="cta">Recevoir ma vidéo</a>
+<p>J'ai grandi près de Tours. Mon père est romancier et peintre. J'ai commencé à écrire à 15 ans, et à 16 ans je suis parti seul à Paris. Ce sont les emails que j'écrivais pour des marques qui ont payé ce départ.</p>
+<p>Depuis, la Sorbonne, Columbia à New York, et maintenant l'ESCP. J'enseigne la microéconomie et les statistiques à la Sorbonne.</p>
+<p>Je skate beaucoup. Le café de spécialité est devenu une obsession, et mes journées commencent par un espresso. Et je joue de la guitare.</p>
+<a href="fr#lettre" class="cta">Recevoir mon audit gratuit</a>
 </div>
 </section>
 
@@ -95,7 +107,7 @@ footer{border-top:1px solid var(--fil);padding-block:20px 32px;display:flex;flex
 <p class="doux" style="margin-top:6px">Tours, puis Paris</p>
 </div>
 
-<div class="row"><span class="date">Aujourd'hui</span><span class="axe"></span><span class="quoi">Copywriting freelance, depuis 2024<br>Enseignement, Sorbonne<br>ESCP, Master in Management, en césure</span></div>
+<div class="row"><span class="date">Aujourd'hui</span><span class="axe"></span><span class="quoi">Emails et rétention, en freelance, depuis 2024<br>Enseignement, Sorbonne<br>ESCP, Master in Management, en césure</span></div>
 <div class="row"><span class="date">2026</span><span class="axe"></span><span class="quoi">Founders Associate<br>Nao Labs (YC X25)<br>Paris</span></div>
 <div class="row"><span class="date" style="padding-bottom:0">2024 – 2025</span><span class="axe"></span><span class="quoi" style="padding-bottom:0">Échange, Dean's List<br>Columbia University<br>New York</span></div>
 <div class="row">

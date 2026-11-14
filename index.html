@@ -43,8 +43,10 @@ p{margin:0}
 /* Accueil */
 .hero{min-height:100svh;display:flex;flex-direction:column}
 .top{display:flex;justify-content:center;align-items:center;gap:24px;padding-block:18px 0;position:relative}
-.langue{position:absolute;right:0;top:18px;font-family:var(--mono);font-size:13px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:var(--doux)}
-.langue:hover{color:var(--encre)}
+.langues{position:absolute;right:0;top:22px;display:inline-flex;gap:2px;padding:3px;border:1.5px solid var(--encre);border-radius:999px;background:var(--papier);font-family:var(--mono);font-size:12px;line-height:1}
+.langues a{min-width:42px;min-height:34px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;color:var(--doux);transition:background .2s ease, color .2s ease}
+.langues a:hover{color:var(--encre)}
+.langues a[aria-current]{background:var(--encre);color:var(--fond)}
 .logo{font-family:var(--serif);font-size:26px;color:var(--fil);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transform:rotate(-4deg)}
 .stage{flex:1;display:grid;grid-template-columns:200px minmax(0,1fr) 200px;align-items:center;gap:24px;width:100%;max-width:1200px;margin:0 auto;padding-block:24px}
 .side{display:flex;flex-direction:column;gap:64px;align-items:center}
@@ -200,7 +202,7 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <section id="haut" class="hero gutter">
 <header class="top">
 <a href="#haut" class="logo">oscar.</a>
-<a href="fr" class="langue" hreflang="fr" lang="fr">Français</a>
+<nav class="langues" aria-label="Language"><a href="./" aria-current="true" lang="en" hreflang="en">EN</a><a href="fr" lang="fr" hreflang="fr" title="Français">FR</a></nav>
 </header>
 
 <div class="stage">
@@ -236,7 +238,7 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M14 24 Q27 20 40 26 Q53 20 66 24 L66 60 Q53 56 40 62 Q27 56 14 60 Z"/><path d="M40 26 L40 62"/><path d="M21 33 Q27 31 33 34 M21 41 Q27 39 33 42 M47 34 Q53 31 59 33 M47 42 Q53 39 59 41"/></g></svg>
 <span class="mono">Who it's for</span>
 </a>
-<a href="a-propos" class="item" style="margin-left:40px">
+<a href="about" class="item" style="margin-left:40px">
 <svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M22 32 Q39 30 56 32 Q56 52 47 59 Q39 63 31 59 Q22 52 22 32 Z"/><path d="M55.8 37.7 Q67 37 65 45 Q63 51 53.75 48.75"/><path d="M14 60 Q40 62 66 60"/><path d="M33 25 Q29 20 33 15 Q37 10 33 5 M44 25 Q40 20 44 15 Q48 10 44 5"/></g></svg>
 <span class="mono">About</span>
 </a>
