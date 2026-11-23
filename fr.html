@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Oscar Marchand</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Je fais rester les abonnés des marques pour animaux plus longtemps. Je fais tourner tout le système de rétention, et une partie de ma rémunération vient des mois en plus qu'ils restent.">
+<meta name="description" content="Rétention pour les marques DTC à abonnement. Je fais rester vos abonnés plus longtemps, et une partie de ma rémunération vient des mois en plus.">
 <meta property="og:title" content="Oscar Marchand">
-<meta property="og:description" content="La rétention des marques pour animaux à abonnement. Je fais rester vos abonnés plus longtemps.">
+<meta property="og:description" content="Rétention pour les marques DTC à abonnement. Je fais rester vos abonnés plus longtemps.">
 <meta property="og:image" content="https://clients.oscomarch.com/oscar.jpg">
 <meta property="og:url" content="https://clients.oscomarch.com/fr">
 <link rel="alternate" hreflang="en" href="https://clients.oscomarch.com/">
@@ -62,6 +62,7 @@ h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(28px, 3.4vw
 .lk{text-decoration:none}
 .sous{color:var(--doux);max-width:31em;text-wrap:balance}
 .cta-ligne{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cta-fil{align-items:flex-start;padding-top:8px}
 .cta{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--action);color:var(--encre);border:1.5px solid var(--encre);box-shadow:0 2px 0 var(--encre);text-decoration:none;font-family:var(--mono);font-size:14px;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease}
 .cta:hover{transform:translateY(-1px);box-shadow:0 3px 0 var(--encre)}
 .cta:active{transform:translateY(1px);box-shadow:0 1px 0 var(--encre)}
@@ -203,12 +204,11 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <nav class="rail" id="rail" aria-label="Où vous en êtes">
 <p class="rail-titre">Où vous en êtes</p>
 <ol>
-<li data-s="probleme"><span class="pt"></span><a href="#probleme">Le problème</a></li>
-<li data-s="systeme"><span class="pt"></span><a href="#systeme">Ce que je fais</a></li>
-<li data-s="difference"><span class="pt"></span><a href="#difference">Pourquoi moi</a></li>
-<li data-s="resultats"><span class="pt"></span><a href="#resultats">Preuves</a></li>
-<li data-s="comment"><span class="pt"></span><a href="#comment">Comment ça marche</a></li>
+<li data-s="offre"><span class="pt"></span><a href="#offre">L'offre</a></li>
 <li data-s="pourqui"><span class="pt"></span><a href="#pourqui">Pour qui</a></li>
+<li data-s="comment"><span class="pt"></span><a href="#comment">Comment ça marche</a></li>
+<li data-s="resultats"><span class="pt"></span><a href="#resultats">Preuves</a></li>
+<li data-s="moi"><span class="pt"></span><a href="#moi">Qui est derrière</a></li>
 <li data-s="questions"><span class="pt"></span><a href="#questions">Questions</a></li>
 <li data-s="lettre"><span class="pt"></span><a href="#lettre">Audit gratuit</a></li>
 </ol>
@@ -222,9 +222,9 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 
 <div class="stage">
 <nav class="side" aria-label="Rubriques">
-<a href="#systeme" class="item" style="margin-left:20px">
+<a href="#offre" class="item" style="margin-left:20px">
 <svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M22 14 Q38 13 54 14 Q55 40 54 66 Q38 67 22 66 Q21 40 22 14 Z"/><path d="M16 22 L21.7 22 M16 32 L21.6 32 M16 42 L21.5 42 M16 52 L21.6 52 M16 62 L21.9 62"/><path d="M29 26 Q38 25 47 26 M29 34 Q37 35 45 34 M29 42 Q36 41 41 42"/><path d="M52 62 L66 24 Q68 20 71 22 Q73 24 71 28 L57 65 Z"/><path d="M52 62 L50 70 L57 65"/></g></svg>
-<span class="mono">Ce que je fais</span>
+<span class="mono">L'offre</span>
 </a>
 <a href="#comment" class="item" style="margin-right:36px">
 <svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M15 16 Q40 14 65 16 Q67 40 65 65 Q40 67 15 65 Q13 40 15 16 Z"/><path d="M24 24 L24 56 L58 56"/><path d="M28 50 Q32 45 36 47 Q41 49 45 40 Q49 32 56 28"/><path d="M56 28 L50 28.6 M56 28 L54.6 33.8"/></g></svg>
@@ -238,9 +238,9 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 
 <div class="center">
 <div class="polaroid"><img src="oscar.jpg" alt="Portrait d'Oscar Marchand" width="84" height="92"></div>
-<p class="mono doux">Rétention · Marques pour animaux à abonnement · Paris</p>
-<h1 class="type" data-garder="1">Vous avez payé pour chacun de vos abonnés.<br>Je les fais <a href="#systeme" class="lk"><span class="u">rester</span></a>, mois après mois.</h1>
-<p class="sous">Pour les marques qui vendent compléments, friandises et nourriture pour animaux en abonnement. Je fais tourner tout votre système de rétention, des données jusqu'aux mots. Et une partie de ma rémunération vient des mois en plus que vos abonnés restent.</p>
+<p class="mono doux">Rétention pour les marques DTC à abonnement · Paris</p>
+<h1 class="type" data-garder="1">Vous avez payé pour chacun de vos abonnés.<br>Je les fais <a href="#offre" class="lk"><span class="u">rester</span></a> plus longtemps.</h1>
+<p class="sous">Je fais tourner les emails que reçoivent vos abonnés après leur inscription. Vous payez un fixe, plus une part de ce que rapportent les mois en plus.</p>
 <div class="cta-ligne">
 <a href="#lettre" class="cta">Recevoir mon audit gratuit</a>
 <span class="mono doux">Gratuit. Un audit de rétention en vidéo, sous 48&nbsp;h.</span>
@@ -269,45 +269,59 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 
 <main class="fil-texte gutter">
 
-<section id="probleme">
-<div class="titre">
-<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M18 22 Q40 28 62 22 L56 62 Q40 68 24 62 Z"/><path d="M18 22 Q40 16 62 22"/><path d="M33 68 Q31 72 33 75 Q35 72 33 68 Z M45 70 Q43 74 45 77 Q47 74 45 70 Z"/></g></svg>
-<h2>Le problème</h2>
-</div>
-<p class="grand type">Vous savez que vos emails pourraient faire plus.<br>Vous n'avez juste jamais le temps.</p>
-<p>Vos flows ont été montés au lancement. Personne ne les a vraiment regardés depuis.</p>
-<p>Chaque nouvel abonné coûte plus cher en pub que le précédent. Puis arrive le deuxième prélèvement. Certains sautent une livraison, d'autres mettent en pause, d'autres résilient. Et vous ne savez pas vraiment pourquoi.</p>
-<p>Quand vous envoyez quelque chose, c'est souvent une promo. Parce que c'est la seule chose dont vous êtes sûr qu'elle marche.</p>
-<p>Mais vous avez déjà le plus dur. Des gens qui vous confient déjà leur chien. Il manque juste la bonne façon de leur parler entre deux livraisons.</p>
-</section>
-
-<section id="systeme">
+<section id="offre">
 <div class="titre">
 <svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M22 14 Q38 13 54 14 Q55 40 54 66 Q38 67 22 66 Q21 40 22 14 Z"/><path d="M16 22 L21.7 22 M16 32 L21.6 32 M16 42 L21.5 42 M16 52 L21.6 52 M16 62 L21.9 62"/><path d="M29 26 Q38 25 47 26 M29 34 Q37 35 45 34 M29 42 Q36 41 41 42"/><path d="M52 62 L66 24 Q68 20 71 22 Q73 24 71 28 L57 65 Z"/><path d="M52 62 L50 70 L57 65"/></g></svg>
-<h2>Ce que je fais tourner</h2>
+<h2>L'offre</h2>
 </div>
-<p class="grand type">Je prends tout en charge.<br>Vraiment tout.</p>
+<p class="grand type">Un seul objectif.<br>Plus de mois pour chaque abonné.</p>
 <ul class="blocs">
-<li><span class="lab">Segmentation</span><p>Qui sont vraiment vos abonnés. Le maître d'un chiot qui vient d'arriver et celui d'un labrador de douze ans n'ont pas besoin du même email.</p></li>
-<li><span class="lab">Flows automatiques</span><p>Après la première commande. Avant chaque prélèvement. Quand quelqu'un saute une livraison. Avant qu'un abonné résilie.</p></li>
-<li><span class="lab">Campagnes</span><p>Nouveaux produits, nouvelles recettes, saisons. Sans un code promo à chaque fois.</p></li>
-<li><span class="lab">Tests</span><p>Chaque envoi est aussi un test. Je regarde qui clique, qui achète, qui revient, et j'en tire une leçon pour les suivants.</p></li>
-<li><span class="lab">Suivi</span><p>Un chiffre clair, celui sur lequel vous me jugez. Chaque mois.</p></li>
-<li><span class="lab">L'écriture</span><p>Chaque mot, avec votre voix. Jamais de modèle tout fait.</p></li>
+<li><span class="lab">Ce que vous obtenez</span><p>Des abonnés qui restent plus longtemps, sautent moins de livraisons et passent à des formules plus longues. Vous le voyez dans un seul chiffre, chaque mois.</p></li>
+<li><span class="lab">Ce que je fais</span><p>Je prends en charge vos emails de rétention. Qui reçoit quoi, les flows, les campagnes, chaque mot, et un test chaque semaine. Vous n'avez rien à gérer.</p></li>
+<li><span class="lab">Ce que vous payez</span><p>Un fixe mensuel, plus une part du chiffre d'affaires en plus. Si ça ne marche pas, je gagne moins.</p></li>
+<li><span class="lab">Comment on le sait</span><p>Un groupe d'abonnés tiré au hasard garde vos emails actuels. L'écart entre les deux groupes, c'est ce que j'apporte. Pas le Black Friday, pas votre pub.</p></li>
 </ul>
-<p class="petit"><em>Je travaille avec l'audience que vous avez déjà. Pour en trouver une nouvelle, je vous présente les bonnes personnes.</em></p>
+<p class="mono doux">Là où les abonnés partent, et ce que j'y mets</p>
+<ul class="conditions">
+<li>La première livraison. Comment l'utiliser et quoi attendre, pour que personne n'abandonne trop tôt.</li>
+<li>Avant chaque prélèvement. Une raison de garder la suivante, envoyée avant le débit.</li>
+<li>Les pauses et les livraisons sautées. Changer la date ou le produit en un clic, avant qu'ils cherchent le bouton résilier.</li>
+<li>Les formules longues. 6 ou 12 mois d'avance, proposés aux bonnes personnes au bon moment.</li>
+<li>La résiliation. Une réponse à la vraie raison, puis un chemin pour revenir.</li>
+</ul>
+<div class="cta-ligne cta-fil">
+<a href="#lettre" class="cta">Recevoir mon audit gratuit</a>
+<span class="mono doux">Gratuit. Une vidéo de ce que je changerais, sous 48&nbsp;h.</span>
+</div>
 </section>
 
-<section id="difference">
+<section id="pourqui">
 <div class="titre">
-<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M40 8 L56 32 Q50 48 46 66 L34 66 Q30 48 24 32 Z"/><circle cx="40" cy="36" r="3"/><path d="M40 39 L40 66"/></g></svg>
-<h2>Pourquoi moi</h2>
+<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M14 24 Q27 20 40 26 Q53 20 66 24 L66 60 Q53 56 40 62 Q27 56 14 60 Z"/><path d="M40 26 L40 62"/><path d="M21 33 Q27 31 33 34 M21 41 Q27 39 33 42 M47 34 Q53 31 59 33 M47 42 Q53 39 59 41"/></g></svg>
+<h2>Pour qui</h2>
 </div>
-<p class="grand type">Ceux qui construisent ces systèmes écrivent rarement bien. Ceux qui écrivent bien regardent rarement les données.<br>Je fais les deux.</p>
-<p>Mon père est romancier. J'ai commencé à écrire à 15 ans, et je n'ai jamais arrêté. À 16 ans, je suis parti seul à Paris. Ce sont les emails que j'écrivais pour des marques qui ont payé ce départ, et mes études.</p>
-<p>Puis sont venus les chiffres. L'économie à la Sorbonne, dans les 2&nbsp;% les meilleurs de ma promo. Columbia, à New York, sur le Dean's List, où j'ai gagné le concours de trading Nasdaq et Columbia. Aujourd'hui, un master à l'ESCP. Et j'enseigne la microéconomie et les statistiques à la Sorbonne.</p>
-<p>Alors je sais pourquoi un email a marché, pas seulement qu'il a marché. Et j'écris le suivant pour qu'il marche mieux.</p>
-<p>Et je ne travaille qu'avec des marques pour animaux. Je sais quand les maîtres résilient, ce qui les inquiète, et comment ils parlent de leur chien. Avant d'écrire un mot, je lis vos avis et j'appelle quelques-uns de vos abonnés.</p>
+<p class="grand type">Les marques DTC qui vivent de leurs abonnements.</p>
+<p>Compléments, café, nourriture pour animaux, cosmétiques, tout ce qu'on reçoit chaque mois. Vous avez déjà des abonnés, et personne dans l'équipe ne s'occupe de la rétention à plein temps.</p>
+<p class="mono doux">Ce dont j'ai besoin</p>
+<ul class="conditions">
+<li>Autour de 1&nbsp;000 abonnés actifs ou plus</li>
+<li>Shopify, avec Klaviyo ou un outil équivalent, et Recharge, Skio ou Loop</li>
+<li>Trois mois au minimum, parce que la rétention met du temps à se voir</li>
+</ul>
+<p>Je travaille avec trois marques à la fois, pas plus. Comme ça, chacune a toute mon attention.</p>
+</section>
+
+<section id="comment">
+<div class="titre">
+<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M15 16 Q40 14 65 16 Q67 40 65 65 Q40 67 15 65 Q13 40 15 16 Z"/><path d="M24 24 L24 56 L58 56"/><path d="M28 50 Q32 45 36 47 Q41 49 45 40 Q49 32 56 28"/><path d="M56 28 L50 28.6 M56 28 L54.6 33.8"/></g></svg>
+<h2>Comment ça marche</h2>
+</div>
+<p class="grand type">Trois étapes.<br>La première est gratuite.</p>
+<ol class="etapes">
+<li><span class="nom">Un audit gratuit, en vidéo</span><p>Parlez-moi de votre marque en deux minutes. Sous 48&nbsp;h, je vous envoie une vidéo. Ce que reçoivent vos abonnés aujourd'hui, ce que je changerais en premier, et à peu près combien ça vous coûte.</p></li>
+<li><span class="nom">On mesure d'où vous partez</span><p>On choisit un chiffre, souvent le nombre de mois qu'un abonné reste. Puis on met de côté le groupe qui garde vos emails actuels.</p></li>
+<li><span class="nom">Je fais tourner</span><p>J'écris, j'envoie et je teste chaque semaine. Chaque mois, vous recevez le chiffre, ce qu'on a appris sur vos abonnés, et le plan pour le mois suivant.</p></li>
+</ol>
 </section>
 
 <section id="resultats">
@@ -315,12 +329,12 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M27 50 Q40 47 53 50 L49 69 Q40 72 31 69 Z"/><path d="M40 48.5 Q38 34 41 16"/><path d="M39.25 39.5 Q29 31 23 35 Q28 44 39.25 39.5 Z"/><path d="M39.4 29.8 Q49 20 56 24 Q51 34 39.4 29.8 Z"/><path d="M41 16 Q37 9 41 4 Q45 9 41 16 Z"/></g></svg>
 <h2>Preuves</h2>
 </div>
-<p class="mono doux">Ce qui s'est passé avec un des clients avec qui je travaille</p>
-<p class="grand type">Plus de 500&nbsp;000&nbsp;€ de ventes,<br>en 3 campagnes.</p>
-<p>Prenez la dernière, cet été. 1&nbsp;514 nouveaux abonnés en quatre semaines. Quatre sur cinq n'avaient jamais payé avant. Les nouveaux abonnements payants par jour ont augmenté de 39&nbsp;% par rapport au mois précédent.</p>
-<p>948 d'entre eux ont choisi l'abonnement annuel. Soit 121&nbsp;000&nbsp;€ payés d'avance, et douze mois de clients qui restent.</p>
+<p class="mono doux">Abby, une app à abonnement, cet été</p>
+<p class="grand type">1&nbsp;514 nouveaux abonnés en quatre semaines.<br>948 sur l'abonnement annuel.</p>
+<p>Soit 121&nbsp;000&nbsp;€ payés d'avance. Quatre sur cinq n'avaient jamais payé avant. Les nouveaux abonnements payants par jour ont augmenté de 39&nbsp;% par rapport au mois précédent.</p>
 <p>Derrière, 31 segments et 183 emails, chacun écrit pour un seul groupe. 128&nbsp;877 emails envoyés, et seulement 0,13&nbsp;% de désabonnements.</p>
 <p>Les phrases qui ont le mieux marché chiffraient exactement ce que chaque client allait perdre, ou le prix qu'il pouvait garder. Jusqu'à cinq fois plus de clics que la moyenne de la campagne.</p>
+<p>C'était ma troisième campagne pour Abby. Sur les trois, plus de 500&nbsp;000&nbsp;€ de ventes.</p>
 <details class="detail">
 <summary>Voir le détail complet</summary>
 <p>Abby, c'est une app de facturation pour les indépendants. Un business d'abonnement, donc le même problème que le vôtre. Faire payer quelqu'un une fois, c'est dur. Le faire rester, c'est là qu'est l'argent.</p>
@@ -376,57 +390,21 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <figcaption>Eric · Vivre Libre · avis sur Malt</figcaption>
 </figure>
 </div>
-<p class="petit">J'écris pour des marques depuis mes 16 ans, entre la France et les États-Unis. J'ai aussi travaillé sur la croissance de startups comme <a href="https://fastflo.ai">Fastflo</a>, <a href="https://getnao.io">Nao Labs</a> (Y&nbsp;Combinator) et <a href="https://astera.holdings">Astera</a>.</p>
 </section>
 
-<section id="comment">
+<section id="moi">
 <div class="titre">
-<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M15 16 Q40 14 65 16 Q67 40 65 65 Q40 67 15 65 Q13 40 15 16 Z"/><path d="M24 24 L24 56 L58 56"/><path d="M28 50 Q32 45 36 47 Q41 49 45 40 Q49 32 56 28"/><path d="M56 28 L50 28.6 M56 28 L54.6 33.8"/></g></svg>
-<h2>Comment ça marche</h2>
+<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M40 8 L56 32 Q50 48 46 66 L34 66 Q30 48 24 32 Z"/><circle cx="40" cy="36" r="3"/><path d="M40 39 L40 66"/></g></svg>
+<h2>Qui est derrière</h2>
 </div>
-<p class="grand type">Vous n'avez pas à me faire confiance le premier jour.<br>Les chiffres vous le diront.</p>
-<ol class="etapes">
-<li><span class="nom">Vous m'écrivez</span><p>Deux minutes. Votre marque, vos clients, et ce que vous aimeriez changer.</p></li>
-<li><span class="nom">Un audit gratuit, en vidéo</span><p>Je regarde ce que vous envoyez aujourd'hui. Je vous montre ce que je changerais, et à peu près combien vous laissez sur la table. Gratuit, même si on ne travaille jamais ensemble.</p></li>
-<li><span class="nom">Un appel</span><p>Si ça a du sens, pour vous comme pour moi.</p></li>
-<li><span class="nom">On mesure d'abord</span><p>On choisit le chiffre qui compte pour votre marque, et on mesure où vous en êtes. Un petit groupe de clients, tiré au hasard, ne reçoit pas les nouveaux emails. Comme ça, on voit tous les deux ce que le système rapporte vraiment. Pas Black Friday, pas vos pubs.</p>
-<div class="exemples" aria-label="Exemples de chiffre, fixé pour chaque marque">
-<div><b>Une marque de compléments</b>souvent combien d'abonnés sont encore là après le troisième prélèvement, et ce que vaut un abonné dans le temps</div>
-<div><b>Une marque de repas frais</b>souvent combien sautent une livraison ou mettent en pause, et combien reviennent</div>
-</div>
-</li>
-<li><span class="nom">Je construis et je fais tourner</span><p>Je plonge dans tout. Vos anciens emails, vos chiffres, vos avis, les questions au service client. J'appelle quelques-uns de vos clients. Puis je construis, j'envoie, je teste, chaque semaine.</p></li>
-</ol>
-<!-- Le paiement : garder ce bloc facile à changer, aucun chiffre tant que ce n'est pas fixé -->
-<div class="paye" id="paiement">
-<p class="mono doux">Comment je suis payé</p>
-<p>Un fixe mensuel pour faire tourner le système. Plus une part de ce qu'il rapporte au-dessus de la base qu'on fixe ensemble.</p>
-<p>Si ça ne marche pas, je gagne moins. C'est tout l'intérêt.</p>
-</div>
-<p>Chaque mois, vous recevez un chiffre, ce qu'on a appris sur vos clients, et le plan pour le mois suivant. Vous pouvez m'écrire quand vous voulez. Vous gardez la main, sans la charge.</p>
-</section>
-
-<section id="pourqui">
-<div class="titre">
-<svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M14 24 Q27 20 40 26 Q53 20 66 24 L66 60 Q53 56 40 62 Q27 56 14 60 Z"/><path d="M40 26 L40 62"/><path d="M21 33 Q27 31 33 34 M21 41 Q27 39 33 42 M47 34 Q53 31 59 33 M47 42 Q53 39 59 41"/></g></svg>
-<h2>Pour qui</h2>
-</div>
-<p class="grand type">Ce n'est pas pour toutes les marques.<br>Et c'est voulu.</p>
-<p>C'est pour les marques pour animaux auxquelles on s'abonne. Compléments, friandises et nourriture, livrés chaque mois. Les chiens d'abord, les chats aussi. Des marques où chaque résiliation fait mal, et où un abonné qui reste peut valoir des années de commandes.</p>
-<p class="mono doux">Ce dont j'ai besoin</p>
-<ul class="conditions">
-<li>Un abonnement qui marche déjà, autour de 1&nbsp;000 abonnés actifs ou plus</li>
-<li>Un produit dont l'animal a besoin chaque mois</li>
-<li>Shopify, avec Klaviyo ou un outil équivalent, et une app d'abonnement comme Recharge, Skio ou Loop</li>
-<li>L'accès à vos données, parce que les résultats ont besoin d'une base de départ</li>
-<li>Quelques mois au minimum, parce que la rétention met du temps à se voir</li>
+<p class="grand type">J'écris, et je lis les données.<br>La plupart des gens ne font que l'un des deux.</p>
+<p>J'écris des emails pour des marques depuis mes 16 ans. C'est ce qui a payé mon arrivée à Paris, et mes études. L'économie à la Sorbonne, dans les 2&nbsp;% les meilleurs. Columbia à New York, sur le Dean's List. Aujourd'hui l'ESCP.</p>
+<ul class="blocs">
+<li><span class="lab">Croissance</span><p>Pour des startups comme <a href="https://fastflo.ai">Fastflo</a>, <a href="https://getnao.io">Nao Labs</a> (Y&nbsp;Combinator) et <a href="https://astera.holdings">Astera</a>.</p></li>
+<li><span class="lab">Enseignement</span><p>La microéconomie et les statistiques, à la Sorbonne.</p></li>
+<li><span class="lab">Écriture</span><p>Mes notes et mes essais, sur <a href="https://oscomarch.com">oscomarch.com</a>.</p></li>
+<li><span class="lab">Le reste</span><p><a href="a-propos">Mon histoire</a>, et ce que je fais en dehors du travail.</p></li>
 </ul>
-<p class="mono doux">Pas pour</p>
-<ul class="conditions pas-pour">
-<li>Les marques très jeunes, encore sans abonnés</li>
-<li>Les marques qui ne vendent que des produits ponctuels, comme des jouets ou des paniers</li>
-</ul>
-<p>Je travaille avec trois marques à la fois, pas plus. Et je les choisis. Comme ça, chacune a toute mon attention.</p>
 </section>
 
 <section id="questions">
@@ -440,20 +418,12 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <p>Oui. Je lis tout ce que vous avez écrit avant, et je parle à vos clients. Si ça ne sonne pas comme vous, ça ne part pas.</p>
 </details>
 <details>
-<summary>Pourquoi seulement des marques pour animaux&nbsp;?</summary>
-<p>Parce que je préfère bien connaître un seul monde. Les questions que posent les maîtres, les moments où ils résilient, la façon dont ils parlent de leur chien. Chaque marque avec qui je travaille me rend meilleur pour la suivante.</p>
-</details>
-<details>
 <summary>Et si ça ne marche pas&nbsp;?</summary>
 <p>Vous le verrez dans les chiffres, parce qu'on mesure dès le premier jour. Vous ne payez alors que le fixe, et vous pouvez arrêter après les premiers mois.</p>
 </details>
 <details>
 <summary>Comment est calculée ma part&nbsp;?</summary>
 <p>Sur ce que le système rapporte au-dessus de la base fixée au départ, comparé au groupe qui ne reçoit pas les nouveaux emails. Vous ne payez que ce qu'il ajoute vraiment.</p>
-</details>
-<details>
-<summary>De quoi avez-vous besoin de notre côté&nbsp;?</summary>
-<p>L'accès à votre boutique, à votre outil d'emailing et à vos chiffres passés. Une heure de votre temps au début. Puis un court appel chaque mois.</p>
 </details>
 <details>
 <summary>Quand verrai-je des résultats&nbsp;?</summary>
@@ -468,15 +438,15 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
 <h2>Audit gratuit</h2>
 </div>
 <p class="grand type">Commençons par un audit gratuit.</p>
-<p>Écrivez-moi une courte lettre, deux minutes, pas plus.<br>Dites-moi qui vous êtes, à qui vous écrivez, et ce que vous aimeriez changer.</p>
+<p>Écrivez-moi une courte lettre, deux minutes, pas plus. Parlez-moi de votre marque et de vos abonnés.</p>
 <p>Sous 48&nbsp;h, je vous envoie une vidéo. Ce que je changerais, par où je commencerais, et à peu près combien vous laissez sur la table. C'est gratuit, et vous ne me devez rien.</p>
 <p>Si l'idée vous plaît, on fixe un appel pour voir ce qu'on peut faire ensemble.</p>
 <form id="form-lettre" class="feuille" novalidate>
 <p>Cher Oscar,</p>
 <p>Je m'appelle <label class="pot" for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" class="w-court" placeholder="prénom" autocomplete="given-name" required>, je m'occupe de <label class="pot" for="f-role">Rôle</label><input id="f-role" name="role" class="w-moyen" placeholder="la croissance" autocomplete="organization-title"> chez <label class="pot" for="f-marque">Marque</label><input id="f-marque" name="marque" class="w-moyen" placeholder="ma marque" autocomplete="organization" required>.</p>
-<p>On écrit à environ <label class="pot" for="f-audience">Taille de l'audience</label><input id="f-audience" name="audience" class="w-chiffre" placeholder="12 000" inputmode="numeric"> personnes. On vend sur <label class="pot" for="f-boutique">Plateforme de la boutique</label><input id="f-boutique" name="boutique" class="w-court" placeholder="Shopify"> et on envoie avec <label class="pot" for="f-outil">Outil d'emailing</label><input id="f-outil" name="outil" class="w-court" placeholder="Klaviyo">.</p>
+<p>On a environ <label class="pot" for="f-audience">Abonnés actifs</label><input id="f-audience" name="audience" class="w-chiffre" placeholder="2 000" inputmode="numeric"> abonnés actifs. On vend sur <label class="pot" for="f-boutique">Plateforme de la boutique</label><input id="f-boutique" name="boutique" class="w-court" placeholder="Shopify"> et on envoie avec <label class="pot" for="f-outil">Outil d'emailing</label><input id="f-outil" name="outil" class="w-court" placeholder="Klaviyo">.</p>
 <p><label for="f-frustration">Ce qui me frustre aujourd'hui, c'est que</label></p>
-<textarea id="f-frustration" name="frustration" rows="2" placeholder="les clients achètent une fois et on ne les revoit plus…"></textarea>
+<textarea id="f-frustration" name="frustration" rows="2" placeholder="les abonnés résilient après la deuxième box…"></textarea>
 <p><label for="f-envie">Ce que j'aimerais, c'est</label></p>
 <textarea id="f-envie" name="envie" rows="2" placeholder="que nos abonnés restent plus longtemps…" required></textarea>
 <p><label for="f-exemple">Voici un de nos derniers emails, en lien ou collé ici.</label></p>
@@ -536,7 +506,7 @@ footer{margin-top:96px;padding-block:20px 32px;border-top:1px solid var(--fil);d
   function texteLettre() {
     return 'Cher Oscar,\n\n'
       + 'Je m\'appelle ' + val('f-prenom') + ', je m\'occupe de ' + (val('f-role') || '…') + ' chez ' + val('f-marque') + '.\n'
-      + 'On écrit à environ ' + (val('f-audience') || '…') + ' personnes. On vend sur ' + (val('f-boutique') || '…') + ' et on envoie avec ' + (val('f-outil') || '…') + '.\n\n'
+      + 'On a environ ' + (val('f-audience') || '…') + ' abonnés actifs. On vend sur ' + (val('f-boutique') || '…') + ' et on envoie avec ' + (val('f-outil') || '…') + '.\n\n'
       + 'Ce qui me frustre aujourd\'hui, c\'est que ' + (val('f-frustration') || '…') + '\n\n'
       + 'Ce que j\'aimerais, c\'est ' + val('f-envie') + '\n\n'
       + 'Un de nos derniers emails\n' + (val('f-exemple') || '…') + '\n\n'
