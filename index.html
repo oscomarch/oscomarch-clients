@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Oscar Marchand · Retention for DTC subscription brands</title>
-<meta name="description" content="Retention for DTC subscription brands. I make your subscribers stay longer, and part of my pay comes from the extra months they stay.">
+<meta name="description" content="Retention for DTC subscription brands. I make your subscribers stay longer, and part of my pay comes from the extra revenue they bring.">
 <meta property="og:title" content="Oscar Marchand · Retention for DTC subscription brands">
 <meta property="og:description" content="Retention for DTC subscription brands. I make your subscribers stay longer.">
 <meta property="og:image" content="https://clients.oscomarch.com/oscar.jpg">
@@ -12,7 +12,6 @@
 <meta name="theme-color" content="#EEE5E0">
 <link rel="alternate" hreflang="en" href="https://clients.oscomarch.com/">
 <link rel="alternate" hreflang="fr" href="https://clients.oscomarch.com/fr">
-<link rel="preload" href="fonts/caveat-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/work-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -20,8 +19,8 @@
    IDEA     la carte de membre : tout ce qui compte tient sur une carte
    PICTURE  la carte elle-même, avec la photo et le tampon
    COLOUR   fond chair et lilas qui bouge doucement, verre clair, encre, stylo bleu
-   TYPE     Work Sans pour dire, M PLUS 1 Code pour les étiquettes, Caveat pour l'écrit à la main
-   LAYOUT   une carte au centre, puis des panneaux de verre, un menu en verre */
+   TYPE     Work Sans pour dire, M PLUS 1 Code pour les étiquettes, l'écriture d'Oscar en images sur la carte
+   LAYOUT   une carte au centre, puis des panneaux de verre aux titres bien visibles, une petite barre en verre */
 :root{
   --fond:#EEE5E0;
   --encre:#1E1C1B;
@@ -31,7 +30,6 @@
   --fil:#3D50A6;
   --sans:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'M PLUS 1 Code',ui-monospace,Menlo,Consolas,monospace;
-  --main:'Caveat','Bradley Hand','Segoe Print',cursive;
   --serif:'Young Serif',Georgia,serif;
   color-scheme:light;
 }
@@ -68,10 +66,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 .verre > *{position:relative}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.verre{background:rgba(255,252,248,.92)}}
 
-/* Barre du haut */
-.barre{position:fixed;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:30;width:min(1040px,calc(100% - 24px));
-  display:flex;align-items:center;gap:10px;padding:8px 8px 8px 22px;border-radius:999px}
-.logo{font-family:var(--serif);font-size:24px;color:var(--fil);text-decoration:none;transform:rotate(-4deg);display:inline-block;margin-right:auto;min-height:44px;line-height:44px}
+/* Barre du haut : une petite pilule de verre, sans logo */
+.barre{position:fixed;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:30;width:max-content;max-width:calc(100% - 24px);
+  display:flex;align-items:center;gap:2px;padding:5px;border-radius:999px}
+.barre .lien{display:inline-flex;align-items:center;min-height:38px;padding:0 13px;border-radius:999px;font:500 14px/1 var(--sans);text-decoration:none;color:var(--encre);white-space:nowrap;transition:background .2s ease}
+.barre .lien:hover{background:rgba(255,255,255,.65)}
+.barre .langues{margin:0 4px;padding:2px}
+.barre .langues a{min-width:32px;min-height:32px;font-size:11px}
+.barre .petit-cta{min-height:38px;padding:0 16px;font:500 14px/1 var(--sans);letter-spacing:0;text-transform:none}
+.barre #ouvrir{display:none;min-height:38px;padding:0 16px;font:500 14px/1 var(--sans);letter-spacing:0;text-transform:none}
+@media (max-width:820px){.barre .lien{display:none}.barre #ouvrir{display:inline-flex}}
+.nom-menu{font:600 15px var(--sans)}
 .pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font:12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--encre);border:1px solid rgba(30,28,27,.16);background:rgba(255,255,255,.35);cursor:pointer;transition:background .2s ease,transform .2s ease}
 .pill:hover{background:rgba(255,255,255,.7)}
 .langues{display:inline-flex;padding:3px;border-radius:999px;border:1px solid rgba(30,28,27,.16);background:rgba(255,255,255,.3)}
@@ -81,7 +86,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
   box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 24px -12px rgba(30,28,27,.6);transition:transform .2s ease,box-shadow .2s ease}
 .cta:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 14px 28px -12px rgba(30,28,27,.65)}
 .cta .fl{transition:transform .2s ease}.cta:hover .fl{transform:translateX(3px)}
-@media (max-width:560px){.barre .audit-haut{display:none}.barre{padding-left:18px}}
 
 /* Le menu */
 .menu{position:fixed;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-8px);z-index:40;width:min(1040px,calc(100% - 24px));max-height:calc(100svh - 24px);overflow:auto;
@@ -107,53 +111,64 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 .carte-haut{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
 .nom{margin:0;font:600 clamp(24px,2.6vw,30px)/1.05 var(--sans);letter-spacing:-.01em;text-transform:uppercase}
 .titulaire{margin-top:12px;font:12px/1.55 var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.valide{font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-align:right;line-height:1.3}
-.valide b{display:block;font:500 25px/1.1 var(--main);letter-spacing:0;text-transform:none;color:var(--stylo);margin-top:2px}
-.corps{display:grid;grid-template-columns:minmax(0,1fr) 196px;gap:40px;align-items:center;margin-top:20px}
-.champs{margin:0;display:flex;flex-direction:column;gap:6px}
-.champs div{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid rgba(30,28,27,.42);padding:8px 0 1px}
-.champs dt{flex:none;width:86px;font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.champs dd{margin:0;font:500 clamp(23px,2.5vw,29px)/1.15 var(--main);color:var(--stylo)}
-.photo{position:relative;margin:0;padding:12px;aspect-ratio:4/5}
-.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;filter:grayscale(1) contrast(1.08) brightness(1.04);border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.18)}
-.photo span{position:absolute;width:18px;height:18px;border:2px solid var(--encre)}
-.photo .c1{top:0;left:0;border-right:0;border-bottom:0}.photo .c2{top:0;right:0;border-left:0;border-bottom:0}
-.photo .c3{bottom:0;left:0;border-right:0;border-top:0}.photo .c4{bottom:0;right:0;border-left:0;border-top:0}
-.carte-bas{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
-.idno{font:600 13px var(--sans);letter-spacing:.02em}
-.idno span{font-weight:400;color:var(--doux)}
+.carte{--k:.64}
+.valide{margin:0;font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-align:right;line-height:1.3}
+.valide span{display:block}
+.valide img.main{margin:6px 0 calc(var(--d) * var(--k) * -1px) auto}
+.valide b{display:block;margin-top:4px;font:500 21px/1.2 var(--sans);letter-spacing:-.01em;text-transform:none;color:var(--stylo)}
+img.main{display:block;width:calc(var(--w) * var(--k) * 1px);max-width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.corps{display:grid;grid-template-columns:minmax(0,1fr) 196px;gap:40px;align-items:center;margin-top:18px}
+.champs{margin:0;display:flex;flex-direction:column;gap:0}
+.champs div{display:grid;grid-template-columns:86px minmax(0,1fr);align-items:end;column-gap:14px;border-bottom:1px solid rgba(30,28,27,.34);height:62px;padding:0 0 5px}
+.champs dt{font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding-bottom:1px}
+.champs dd{margin:0;font:500 clamp(18px,1.9vw,21px)/1.25 var(--sans);letter-spacing:-.01em;color:var(--stylo)}
+.champs dd img.main{margin-bottom:calc(var(--d) * var(--k) * -1px - 3px)}
+.photo{position:relative;margin:0;aspect-ratio:4/5}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;filter:grayscale(1) contrast(1.08) brightness(1.04);border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.14),0 14px 30px -18px rgba(40,20,20,.5)}
+.carte-bas{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;margin-top:26px}
+.carte-bas .mono{color:var(--doux)}
 .tampon{position:absolute;right:-56px;bottom:64px;width:150px;height:150px;transform:rotate(-14deg);color:#5B3A4A;opacity:.62;mix-blend-mode:multiply;pointer-events:none}
 .tampon text{font-family:var(--mono);font-size:13.5px;letter-spacing:2.4px;fill:currentColor}
 .tampon .m{font-family:var(--serif);font-size:38px;letter-spacing:0}
 .sous-carte{text-align:center;font:12px/1.8 var(--mono);letter-spacing:.04em;color:var(--doux)}
-@media (max-width:1040px){.carte .tampon{right:-18px}}
 @media (max-width:700px){
-  .carte{padding:22px 18px 22px;display:grid;grid-template-columns:minmax(0,1fr) 104px;column-gap:14px}
-  .carte-haut{grid-column:1;grid-row:1;flex-direction:column;gap:10px}
+  .carte{--k:.52;padding:22px 18px 22px;display:grid;grid-template-columns:minmax(0,1fr) 96px;column-gap:14px}
+  .carte-haut{grid-column:1;grid-row:1;flex-direction:column;gap:12px}
   .valide{text-align:left}
+  .valide img.main{margin-left:0}
   .corps{display:contents}
-  .photo{grid-column:2;grid-row:1;align-self:start;width:104px;padding:8px}
-  .photo span{width:13px;height:13px}
-  .champs{grid-column:1 / -1;grid-row:2;margin-top:12px}
+  .photo{grid-column:2;grid-row:1;align-self:start;width:96px}
+  .photo img{border-radius:9px}
+  .champs{grid-column:1 / -1;grid-row:2;margin-top:6px}
   .carte-bas{grid-column:1 / -1;grid-row:3}
-  .champs div{flex-direction:column;gap:0;padding-top:10px}
-  .champs dt{width:auto;font-size:11px}
-  .carte-bas{flex-direction:column;align-items:stretch}
+  .champs div{grid-template-columns:1fr;row-gap:8px;height:auto;padding-top:22px}
+  .valide img.main{margin-bottom:0}
+  .champs dt{font-size:11px}
+  .carte-bas{flex-direction:column;align-items:stretch;text-align:center}
   .carte-bas .cta{width:100%}
-  .carte .tampon{width:92px;height:92px;right:-4px;top:150px;bottom:auto}
 }
 
 /* Les panneaux */
 main{width:min(1000px,100%);margin:0 auto;padding:0 16px 24px;display:flex;flex-direction:column;gap:24px}
 .panneau{padding:clamp(24px,4.4vw,48px)}
-.ent{display:flex;align-items:center;gap:12px}
-.ent svg{width:38px;height:38px;flex:none}
-.ent h2{margin:0;font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--doux);font-weight:400}
+.ent{display:flex;align-items:center;gap:14px}
+.ent svg{width:clamp(40px,5vw,54px);height:clamp(40px,5vw,54px);flex:none}
+.ent h2{margin:0;font:600 clamp(34px,5vw,56px)/1.02 var(--sans);letter-spacing:-.035em}
 .dessin{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.enonce{margin:18px 0 0;font:500 clamp(26px,3.5vw,40px)/1.12 var(--sans);letter-spacing:-.02em;text-wrap:balance}
-.intro{margin-top:16px;max-width:38em;color:var(--doux)}
+.lead{margin:20px 0 0;max-width:30em;font:400 clamp(20px,2.3vw,25px)/1.4 var(--sans);letter-spacing:-.01em;text-wrap:pretty}
+.intro{margin-top:14px;max-width:38em;color:var(--doux)}
+.guide{margin-top:30px;font:500 17px/1.5 var(--sans)}
+.guide + .tuiles{margin-top:14px}
+.infos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.info{border-radius:20px;padding:20px 22px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.info h3{margin:0 0 8px;font:600 20px/1.2 var(--sans);letter-spacing:-.01em}
+.info p{font-size:16px;line-height:1.55;color:var(--doux)}
+.sous-titre{margin:44px 0 0;font:600 clamp(22px,2.4vw,28px)/1.2 var(--sans);letter-spacing:-.02em}
 .tuiles{display:grid;gap:12px;margin-top:28px}
-.t5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.t5{grid-template-columns:1fr;gap:0;border-top:1px solid var(--trait)}
+.t5 .tuile{display:grid;grid-template-columns:40px 250px minmax(0,1fr);align-items:baseline;column-gap:16px;padding:18px 4px;background:none;border:0;border-bottom:1px solid var(--trait);border-radius:0;box-shadow:none}
+.t5 .tuile h3{margin:0;font-size:18px}
+.t5 .tuile p{font-size:16.5px}
 .t3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .t2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .tuile{border-radius:20px;padding:18px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
@@ -162,38 +177,39 @@ main{width:min(1000px,100%);margin:0 auto;padding:0 16px 24px;display:flex;flex-
 .tuile p{font-size:15.5px;line-height:1.55;color:var(--doux)}
 .note{margin-top:22px;padding-top:18px;border-top:1px solid var(--trait);display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;font-size:16px}
 .note .mono{padding-top:4px;color:var(--fil)}
-@media (max-width:900px){.t5{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.t5,.t3,.t2{grid-template-columns:1fr}.note{grid-template-columns:1fr;gap:6px}}
+@media (max-width:760px){.t5 .tuile{grid-template-columns:32px minmax(0,1fr);row-gap:6px}.t5 .tuile p{grid-column:2}}
+@media (max-width:640px){.t3,.t2,.infos{grid-template-columns:1fr}.note{grid-template-columns:1fr;gap:6px}}
 
 /* Preuves */
-.kicker{margin-top:18px}
+.chiffre-cle{margin:12px 0 0;font:600 clamp(26px,3.4vw,38px)/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
 .stats div{border-top:1px solid var(--trait);padding-top:10px}
 .stats b{display:block;font:600 clamp(24px,2.8vw,32px)/1.1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
-.stats span{font:12px/1.4 var(--mono);color:var(--doux)}
+.stats span{display:block;margin-top:4px;font:15px/1.4 var(--sans);color:var(--doux)}
 @media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 details.detail{margin-top:22px;border-radius:20px;padding:0 20px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8)}
-details.detail summary{font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fil)}
+details.detail summary{font:500 16px var(--sans);color:var(--fil)}
 details.detail[open]{padding-bottom:20px}
 details.detail p{margin:0 0 14px;font-size:16px}
 details.detail h3{margin:22px 0 8px;font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--doux);font-weight:400}
 .chiffres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .chiffres div{border-top:1px solid var(--trait);padding-top:8px}
 .chiffres b{display:block;font:600 20px/1.3 var(--sans)}
-.chiffres span{font:12px var(--mono);color:var(--doux)}
+.chiffres span{font:14px/1.4 var(--sans);color:var(--doux)}
 .objet{font-family:var(--serif)}
 .suite{margin-top:34px;font:500 clamp(19px,2vw,23px)/1.35 var(--sans);letter-spacing:-.01em;text-wrap:balance}
 .avis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
 figure.citation{margin:0;padding:20px;border-radius:20px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8);display:flex;flex-direction:column;gap:12px;justify-content:space-between}
 .citation blockquote{margin:0;font:18px/1.45 var(--serif)}
-.citation figcaption{font:12px/1.6 var(--mono);color:var(--doux)}
+.citation figcaption{font:13px/1.6 var(--mono);color:var(--doux)}
 @media (max-width:640px){.avis{grid-template-columns:1fr}}
 
 /* Qui est derrière */
-.liens{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--trait)}
+.liens-h{margin:34px 0 0;font:500 17px/1.5 var(--sans)}
+.liens{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--trait)}
 .liens a{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:56px;padding:10px 4px;border-bottom:1px solid var(--trait);text-decoration:none;transition:background .2s ease,padding .2s ease}
 .liens a:hover{background:rgba(255,255,255,.35);padding-left:12px}
-.liens .mono{color:var(--doux)}
+.liens .mono{color:var(--doux);font-size:13px}
 .liens b{font-weight:500}
 .liens .fl{font-family:var(--mono);color:var(--fil)}
 @media (max-width:560px){.liens a{grid-template-columns:minmax(0,1fr) auto}.liens .mono{grid-column:1 / -1;margin-bottom:-12px}}
@@ -210,16 +226,16 @@ details[open] summary::after{transform:rotate(45deg)}
 
 /* La demande d'audit, en carte */
 .demande{margin-top:26px;padding:30px 34px 26px;border-radius:22px;background:linear-gradient(155deg,rgba(255,253,249,.85),rgba(255,251,246,.55));border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 #fff,0 20px 50px -30px rgba(70,35,35,.35);position:relative;overflow:hidden}
-.demande-tete{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:6px;padding-right:110px}
+.demande-tete{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:6px}
 .demande-tete b{font:600 20px/1.1 var(--sans);text-transform:uppercase}
 .lignes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
 .ligne{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid rgba(30,28,27,.42);padding-top:14px}
 .ligne.large{grid-column:1 / -1}
-.ligne label{flex:none;font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.ligne input,.ligne textarea{flex:1;width:100%;border:0;background:transparent;font:500 25px/1.2 var(--main);color:var(--stylo);padding:2px 2px 4px;border-radius:4px}
-.ligne textarea{resize:vertical;min-height:2.6em;line-height:1.25}
+.ligne label{flex:none;font:13px var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.ligne input,.ligne textarea{flex:1;width:100%;border:0;background:transparent;font:500 19px/1.3 var(--sans);letter-spacing:-.01em;color:var(--stylo);padding:4px 2px 6px;border-radius:4px}
+.ligne textarea{resize:vertical;min-height:3em;line-height:1.35}
 .ligne input::placeholder,.ligne textarea::placeholder{color:rgba(42,54,129,.38)}
-.demande-bas{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
+.demande-bas{display:flex;justify-content:flex-end;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
 .demande .tampon{right:-18px;bottom:auto;top:-22px;width:120px;height:120px}
 .pot{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
 .erreur{margin-top:14px;font-size:15px}
@@ -228,7 +244,7 @@ details[open] summary::after{transform:rotate(45deg)}
 .envoi .grand{font:500 26px/1.2 var(--sans)}
 .petit{font-size:14px;color:var(--doux);margin-top:14px}
 .direct{font-family:var(--mono);user-select:all}
-@media (max-width:640px){.demande{padding:22px 18px}.lignes{grid-template-columns:1fr}.ligne{flex-direction:column;gap:0}.demande-bas .cta{width:100%}.demande .tampon{width:84px;height:84px;right:-10px;top:-12px}.demande-tete{padding-right:64px}}
+@media (max-width:640px){.demande{padding:22px 18px}.lignes{grid-template-columns:1fr}.ligne{flex-direction:column;gap:0}.demande-bas .cta{width:100%}.demande .tampon{width:84px;height:84px;right:-10px;top:-12px}}
 
 footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font:12px var(--mono);color:var(--doux)}
 
@@ -249,62 +265,61 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 <div class="grain" aria-hidden="true"></div>
 
 <header class="barre verre">
-<a href="#haut" class="logo">oscar.</a>
-<a href="#lettre" class="pill audit-haut">Free audit</a>
+<nav aria-label="Sections" style="display:contents"><a class="lien" href="#offre">What I do</a><a class="lien" href="#comment">How it works</a><a class="lien" href="#resultats">Results</a><a class="lien" href="#moi">About me</a></nav>
 <nav class="langues" aria-label="Language"><a href="./" aria-current="true" lang="en" hreflang="en">EN</a><a href="fr" lang="fr" hreflang="fr" title="Français">FR</a></nav>
 <button class="pill" id="ouvrir" aria-expanded="false" aria-controls="menu">Menu</button>
+<a href="#lettre" class="cta petit-cta">Free audit</a>
 </header>
 
 <div class="voile" id="voile"></div>
 <nav class="menu verre" id="menu" aria-label="Menu">
-<div class="menu-tete"><a href="#haut" class="logo">oscar.</a><button class="fermer" id="fermer" aria-label="Close menu">×</button></div>
-<div class="menu-corps"><div><h3>The offer</h3><ul><li><a href="#offre">What I do</a></li><li><a href="#comment">How it works</a></li><li><a href="#pourqui">Who it's for</a></li></ul></div><div><h3>Proof</h3><ul><li><a href="#resultats">Abby, this summer</a></li><li><a href="#avis">Reviews</a></li></ul></div><div><h3>About</h3><ul><li><a href="#moi">Who's behind it</a></li><li><a href="about">My story</a></li><li><a href="https://oscomarch.com" target="_blank" rel="noopener">oscomarch.com</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="mailto:oscomarch@gmail.com">Email</a></li><li><a href="#lettre">Free audit</a></li></ul></div><div class="menu-cta"><a href="#lettre" class="cta">Get my free audit <span class="fl" aria-hidden="true">→</span></a></div></div>
+<div class="menu-tete"><span class="nom-menu">Oscar Marchand</span><button class="fermer" id="fermer" aria-label="Close menu">×</button></div>
+<div class="menu-corps"><div><h3>The offer</h3><ul><li><a href="#offre">What I do</a></li><li><a href="#comment">How it works</a></li><li><a href="#pourqui">Who it's for</a></li><li><a href="#prix">What you pay</a></li></ul></div><div><h3>Proof</h3><ul><li><a href="#resultats">Results</a></li><li><a href="#avis">Reviews</a></li></ul></div><div><h3>About</h3><ul><li><a href="#moi">Who I am</a></li><li><a href="about">My story</a></li><li><a href="https://oscomarch.com" target="_blank" rel="noopener">oscomarch.com</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="mailto:oscomarch@gmail.com">Email</a></li><li><a href="#lettre">Free audit</a></li></ul></div><div class="menu-cta"><a href="#lettre" class="cta">Get my free audit <span class="fl" aria-hidden="true">→</span></a></div></div>
 <div class="menu-pied"><span class="mono doux">© 2026 · Oscar Marchand EI · Paris</span><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg></div>
 </nav>
 
 <section class="hero" id="haut">
-<h1 class="sr">Oscar Marchand. Retention for DTC subscription brands. I make your subscribers stay longer.</h1>
+<h1 class="sr">Oscar Marchand, retention for DTC subscription brands. I make your subscribers stay longer.</h1>
 <article class="carte verre" id="carte">
 <div class="carte-haut">
 <div><p class="nom">Oscar Marchand</p><p class="titulaire">The holder of this card<br>makes subscribers stay.</p></div>
-<p class="valide">Valid:<b>as long as they stay</b></p>
+<p class="valide"><span>Valid</span><img class="main" src="ecriture/stay.png" alt="as long as they stay" width="392" height="108" style="--w:392;--d:57"></p>
 </div>
 <div class="corps">
-<dl class="champs"><div><dt>For</dt><dd>DTC subscription brands</dd></div><div><dt>I make</dt><dd>your subscribers stay longer</dd></div><div><dt>You get</dt><dd>more months from each one</dd></div><div><dt>You pay</dt><dd>a fixed fee + a share of the gain</dd></div><div><dt>Proof</dt><dd>948 annual plans in 4 weeks</dd></div></dl>
-<figure class="photo"><img src="oscar.jpg" alt="Oscar Marchand, photo booth style portrait" width="400" height="400"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span></figure>
+<dl class="champs"><div><dt>For</dt><dd><img class="main" src="ecriture/brands.png" alt="DTC subscription brands" width="450" height="50" style="--w:450;--d:12"></dd></div><div><dt>I make</dt><dd><img class="main" src="ecriture/longer.png" alt="your subscribers stay longer" width="468" height="84" style="--w:468;--d:41"></dd></div><div><dt>You get</dt><dd><img class="main" src="ecriture/ltv.png" alt="more months and more LTV from each one" width="484" height="62" style="--w:484;--d:30"></dd></div><div><dt>You pay</dt><dd><img class="main" src="ecriture/fee.png" alt="a fixed fee + a share of the gain" width="549" height="78" style="--w:549;--d:42"></dd></div><div><dt>Proof</dt><dd><img class="main" src="ecriture/proof.png" alt="948 annual plans in 4 weeks" width="474" height="57" style="--w:474;--d:18"></dd></div></dl>
+<figure class="photo"><img src="oscar.jpg" alt="Oscar Marchand" width="400" height="400"></figure>
 </div>
-<div class="carte-bas"><p class="idno">ID No. 001<span> · 3 brands at a time · Paris</span></p><a href="#lettre" class="cta">Get my free audit <span class="fl" aria-hidden="true">→</span></a></div>
-<svg class="tampon" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rond" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><g fill="none" stroke="currentColor"><path d="M100 8 L165 35 L192 100 L165 165 L100 192 L35 165 L8 100 L35 35 Z" stroke-width="2.4"/><circle cx="100" cy="100" r="56" stroke-width="1.6"/></g><text><textPath href="#rond" startOffset="0">PAID ON RESULTS · RETENTION · PARIS · </textPath></text><text class="m" x="100" y="113" text-anchor="middle">OM</text></svg>
+<div class="carte-bas"><a href="#lettre" class="cta">Get my free audit <span class="fl" aria-hidden="true">→</span></a><span class="mono">Free, a video within 48&nbsp;hours</span></div>
 </article>
-<p class="sous-carte">Free. A video of what I'd change, within 48&nbsp;hours.<br>It's <span id="heure">--:--</span> in Paris. I answer myself.</p>
+<p class="sous-carte">It's <span id="heure">--:--</span> in Paris, and I answer every request myself.</p>
 </section>
 
 <main>
 <section class="panneau verre monte" id="offre">
 <div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M22 14 Q38 13 54 14 Q55 40 54 66 Q38 67 22 66 Q21 40 22 14 Z"/><path d="M16 22 L21.7 22 M16 32 L21.6 32 M16 42 L21.5 42 M16 52 L21.6 52 M16 62 L21.9 62"/><path d="M29 26 Q38 25 47 26 M29 34 Q37 35 45 34 M29 42 Q36 41 41 42"/><path d="M52 62 L66 24 Q68 20 71 22 Q73 24 71 28 L57 65 Z"/><path d="M52 62 L50 70 L57 65"/></g></svg><h2>What I do</h2></div>
-<p class="enonce">One goal.<br>More months from every subscriber.</p>
-<p class="intro">I take over your retention emails. Who gets what, the flows, the campaigns, every word, and a test every week. You don't have to manage anything.</p>
-<ul class="tuiles t5" role="list" style="list-style:none;padding:0"><li class="tuile"><span class="n">01</span><h3>The first delivery</h3><p>How to use it and what to expect, so nobody gives up too early.</p></li><li class="tuile"><span class="n">02</span><h3>Before each charge</h3><p>A reason to keep the next one, sent before the card is charged.</p></li><li class="tuile"><span class="n">03</span><h3>Skips and pauses</h3><p>Change the date or the product in one click, before they look for the cancel button.</p></li><li class="tuile"><span class="n">04</span><h3>Longer plans</h3><p>6 or 12 months upfront, offered to the right people at the right time.</p></li><li class="tuile"><span class="n">05</span><h3>Cancellation</h3><p>An answer to the real reason, then a way back.</p></li></ul>
-<p class="note"><span class="mono">How we know</span><span>A random group of subscribers keeps your current emails. The gap between the two groups is what I bring. Not Black Friday, not your ads.</span></p><p class="note"><span class="mono">What you pay</span><span>A fixed monthly fee, plus a share of the extra revenue. If it doesn't work, I earn less.</span></p>
+<p class="lead">I write and send the emails your subscribers get after they sign up, so they stay longer and each one brings you more money.</p>
+<p class="intro">I handle everything, from who gets which email to the words and the weekly tests. You have nothing to manage.</p>
+<p class="guide">Subscribers usually leave at five moments. Here is what I send at each one.</p>
+<ul class="tuiles t5" role="list" style="list-style:none;padding:0"><li class="tuile"><span class="n">01</span><h3>After the first order</h3><p>I show them how to use the product and what to expect, so they don't give up in the first few weeks.</p></li><li class="tuile"><span class="n">02</span><h3>Before each charge</h3><p>I give them a reason to keep the next delivery, a few days before their card is charged.</p></li><li class="tuile"><span class="n">03</span><h3>When they want a break</h3><p>I show them they can skip or change their next delivery in one click, before they go looking for the cancel button.</p></li><li class="tuile"><span class="n">04</span><h3>When they're happy</h3><p>I offer the right people a 6 or 12 month plan paid upfront, at the moment they're most ready to say yes.</p></li><li class="tuile"><span class="n">05</span><h3>When they cancel</h3><p>I answer the real reason they want to leave, and I leave the door open for them to come back.</p></li></ul>
 </section>
 
 <section class="panneau verre monte" id="comment">
 <div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M15 16 Q40 14 65 16 Q67 40 65 65 Q40 67 15 65 Q13 40 15 16 Z"/><path d="M24 24 L24 56 L58 56"/><path d="M28 50 Q32 45 36 47 Q41 49 45 40 Q49 32 56 28"/><path d="M56 28 L50 28.6 M56 28 L54.6 33.8"/></g></svg><h2>How it works</h2></div>
-<p class="enonce">Three steps.<br>The first one is free.</p>
-<ol class="tuiles t3" style="list-style:none;padding:0"><li class="tuile"><span class="n">01</span><h3>A free audit, on video</h3><p>Tell me about your brand in two minutes. Within 48&nbsp;hours, I send you a video. What your subscribers get today, what I'd change first, and roughly what it costs you.</p></li><li class="tuile"><span class="n">02</span><h3>We measure where you stand</h3><p>We pick one number, usually how many months a subscriber stays. Then we set aside the group that keeps your current emails.</p></li><li class="tuile"><span class="n">03</span><h3>I run it</h3><p>I write, send and test every week. Each month, you get the number, what we learned about your subscribers, and the plan for the next one.</p></li></ol>
-<p class="note" id="pourqui"><span class="mono">Who it's for</span><span>DTC brands that live on subscriptions. Supplements, coffee, pet food, skincare. Around 1,000 active subscribers or more, on Shopify with Klaviyo and Recharge, Skio or Loop. I work with three brands at a time.</span></p>
+<p class="lead">We start with a free audit. Then I take care of everything, and every month you see what it brought in.</p>
+<ol class="tuiles t3" style="list-style:none;padding:0"><li class="tuile"><span class="n">01</span><h3>A free audit</h3><p>You tell me about your brand in two minutes. Within 48&nbsp;hours, I send you a video that shows what your subscribers receive today and what I would change first.</p></li><li class="tuile"><span class="n">02</span><h3>We measure where you start</h3><p>We pick the number that matters most, usually how many months a subscriber stays. A small random group keeps your current emails, so we see exactly what my emails add, without counting your ads or your promotions.</p></li><li class="tuile"><span class="n">03</span><h3>I run it every week</h3><p>I write, send and test new emails every week. Each month, you get the result and the plan for the next month.</p></li></ol>
+<div class="infos"><div class="info" id="pourqui"><h3>Who it's for</h3><p>DTC brands that sell on subscription, like supplements, coffee, pet food or skincare. You have around 1,000 active subscribers or more, on Shopify with Klaviyo and Recharge, Skio or Loop. I work with three brands at a time.</p></div><div class="info" id="prix"><h3>What you pay</h3><p>A fixed monthly fee, plus a share of the extra revenue my emails bring in. If they don't make a difference, I earn less.</p></div></div>
 </section>
 
 <section class="panneau verre monte" id="resultats">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M27 50 Q40 47 53 50 L49 69 Q40 72 31 69 Z"/><path d="M40 48.5 Q38 34 41 16"/><path d="M39.25 39.5 Q29 31 23 35 Q28 44 39.25 39.5 Z"/><path d="M39.4 29.8 Q49 20 56 24 Q51 34 39.4 29.8 Z"/><path d="M41 16 Q37 9 41 4 Q45 9 41 16 Z"/></g></svg><h2>Proof</h2></div>
-<p class="mono doux kicker">Abby, a subscription app, this summer</p>
-<p class="enonce">1,514 new subscribers in four weeks.<br>948 on the annual plan.</p>
+<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M27 50 Q40 47 53 50 L49 69 Q40 72 31 69 Z"/><path d="M40 48.5 Q38 34 41 16"/><path d="M39.25 39.5 Q29 31 23 35 Q28 44 39.25 39.5 Z"/><path d="M39.4 29.8 Q49 20 56 24 Q51 34 39.4 29.8 Z"/><path d="M41 16 Q37 9 41 4 Q45 9 41 16 Z"/></g></svg><h2>Results</h2></div>
+<p class="lead">This summer, I ran a four week campaign for Abby, an invoicing app for freelancers that runs on subscriptions.</p>
+<p class="chiffre-cle">1,514 people subscribed, and 948 of them chose the annual plan.</p>
 <div class="stats"><div><b>€121,000</b><span>paid upfront</span></div><div><b>4 in 5</b><span>had never paid before</span></div><div><b>+39%</b><span>new paid subscriptions a day</span></div><div><b>0.13%</b><span>unsubscribed</span></div></div>
-<p class="intro">Behind it, 31 segments and 183 emails, each one written for a single group. The lines that worked best named the exact amount each customer was about to lose. It was my third campaign for Abby. Across the three, over €500,000 in sales.</p>
+<p class="intro">I split their users into 31 groups and wrote 183 emails, each one for a single group. The emails that worked best told each customer the exact amount they were about to lose. It was my third campaign for Abby, and the three together brought in over €500,000 in sales.</p>
 <details class="detail">
 <summary>See the full breakdown</summary>
-<p>Abby is an invoicing app for freelancers in France. A subscription business, so the same problem as yours. Getting someone to pay once is hard. Getting them to stay is where the money is.</p>
-<p>The goal this summer was simple. Get free users to pay, and get as many as possible onto the annual plan.</p>
+<p>Abby is an invoicing app for freelancers in France. It runs on subscriptions, so it has the same problem as you. Getting someone to pay once is hard, and keeping them is where the money is.</p>
+<p>This summer, the goal was to get free users to pay, and to move as many as possible onto the annual plan.</p>
 <h3>The numbers</h3>
 <div class="chiffres">
 <div><b>4 weeks</b><span>of campaign</span></div>
@@ -319,15 +334,16 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 <div><b>0.13%</b><span>unsubscribed</span></div>
 </div>
 <h3>What worked</h3>
-<p>Two subject lines did most of the work. <span class="objet">“Lock in your price before it goes back up.”</span> And <span class="objet">“€37.80 sitting idle on your subscription.”</span> 21.3% and 17.8% of the people who opened them clicked. The campaign average was 3.99%.</p>
+<p>Two subject lines did most of the work, <span class="objet">“Lock in your price before it goes back up.”</span> and <span class="objet">“€37.80 sitting idle on your subscription.”</span> Of the people who opened them, 21.3% and 17.8% clicked, against 3.99% on average for the campaign.</p>
 <p>Both do the same thing. They put an exact number on what the reader is about to lose. Nobody wants to leave money on the table.</p>
 <h3>What didn't</h3>
-<p>One email was opened by almost half the people who got it, 49.7%. Then barely anyone clicked, 1.9%. The subject line promised more than the email gave. A big open rate means nothing on its own, and I'd rather tell you than hide it.</p>
+<p>One email was opened by almost half the people who got it (49.7%), but barely anyone clicked (1.9%). The subject line promised more than the email gave. A big open rate means nothing on its own, and I'd rather tell you than hide it.</p>
 <h3>What I won't pretend</h3>
 <p>This is a comparison with the month before, not a controlled test. Some of these people would have subscribed anyway. And most email tools are generous when they count which sales came from an email.</p>
 <p>That's exactly why, with you, a small group of customers doesn't get the new emails from day one. So the number we look at is the real one.</p>
 </details>
-<p class="suite">Black Friday, then January, then the summer.<br>Three campaigns in a row, with two different heads of marketing.</p>
+<p class="suite">Abby hired me for three campaigns in a row, for Black Friday, January and the summer, with two different heads of marketing.</p>
+<h3 class="sous-titre">What my clients say</h3>
 <div class="avis" id="avis">
 <figure class="citation">
 <blockquote>“Oscar wrote the sale campaign from A to Z, and handled the segmentation too. I recommend him without hesitation.”</blockquote>
@@ -358,9 +374,10 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 </section>
 
 <section class="panneau verre monte" id="moi">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M40 8 L56 32 Q50 48 46 66 L34 66 Q30 48 24 32 Z"/><circle cx="40" cy="36" r="3"/><path d="M40 39 L40 66"/></g></svg><h2>Who's behind it</h2></div>
-<p class="enonce">I write, and I read the data.<br>Most people only do one.</p>
-<p class="intro">I've written emails for brands since I was 16. That's what paid for my move to Paris, and my studies. Economics at La Sorbonne, in the top 2%. Columbia in New York, on the Dean's List. Now ESCP. And I teach microeconomics and statistics at La Sorbonne.</p>
+<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M40 8 L56 32 Q50 48 46 66 L34 66 Q30 48 24 32 Z"/><circle cx="40" cy="36" r="3"/><path d="M40 39 L40 66"/></g></svg><h2>Who I am</h2></div>
+<p class="lead">I write the emails, and I read the data behind them. Most people in this job only do one of the two.</p>
+<p class="intro">I've been writing emails for brands since I was 16. It's what paid for my move to Paris and for my studies. I studied economics at La Sorbonne, where I finished in the top 2%, then at Columbia in New York, where I made the Dean's List. Today I'm at ESCP, and I teach microeconomics and statistics at La Sorbonne.</p>
+<p class="liens-h">Where else you can see my work</p>
 <ul class="liens"><li><a href="https://fastflo.ai" target="_blank" rel="noopener"><span class="mono">Growth</span><b>Fastflo</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://getnao.io" target="_blank" rel="noopener"><span class="mono">Growth</span><b>Nao Labs · Y Combinator</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://astera.holdings" target="_blank" rel="noopener"><span class="mono">Growth</span><b>Astera</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://oscomarch.com" target="_blank" rel="noopener"><span class="mono">Writing</span><b>oscomarch.com</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="about"><span class="mono">Outside work</span><b>My story</b><span class="fl" aria-hidden="true">→</span></a></li></ul>
 </section>
 
@@ -374,7 +391,7 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 <p>You'll see it in the numbers, because we measure from day one. Then you only pay the fixed fee, and you can stop after the first months.</p>
 </details><details>
 <summary>How is my share calculated?</summary>
-<p>On what the system brings in above the baseline we set at the start, compared with the group that doesn't get the new emails. So you only pay for what it really adds.</p>
+<p>It's based on what the emails bring in above the starting point we set together, compared with the group that keeps your current emails. So you only pay for what they really add.</p>
 </details><details>
 <summary>When will I see results?</summary>
 <p>The first sends go out in the first month. The real progress shows after two or three months, once the system has learned enough about your customers.</p>
@@ -382,18 +399,16 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 </section>
 
 <section class="panneau verre monte" id="lettre">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg><h2>Free audit</h2></div>
-<p class="enonce">Let's start with a free audit.</p>
-<p class="intro">Fill in this card. Within 48&nbsp;hours, I send you a video. What I'd change, where I'd start, and roughly what you're leaving on the table. It's free, and you owe me nothing.</p>
+<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg><h2>Get your free audit</h2></div>
+<p class="lead">Fill in this card and I'll send you a video within 48&nbsp;hours. I'll show you what I would change, where I would start, and roughly how much you're leaving on the table. It's free, and you don't owe me anything.</p>
 <form class="demande" id="form-lettre" novalidate>
-<div class="demande-tete"><b>Audit request</b><span class="mono doux">Free · reply within 48&nbsp;hours</span></div>
+<div class="demande-tete"><b>Audit request</b><span class="mono doux">Free, reply within 48&nbsp;hours</span></div>
 <div class="lignes"><p class="ligne"><label for="f-prenom">Name</label><input id="f-prenom" name="prenom" type="text" placeholder="first name" autocomplete="given-name" required></p><p class="ligne"><label for="f-marque">Brand</label><input id="f-marque" name="marque" type="text" placeholder="your brand" autocomplete="organization" required></p><p class="ligne"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@brand.com" autocomplete="email" required></p><p class="ligne"><label for="f-audience">Subscribers</label><input id="f-audience" name="audience" type="text" placeholder="about 2,000" autocomplete="off" inputmode="numeric"></p><p class="ligne large"><label for="f-envie">I'd like to change</label><textarea id="f-envie" name="envie" rows="2" placeholder="subscribers cancel after the second box…" required></textarea></p><p class="ligne large"><label for="f-exemple">One of our emails</label><input id="f-exemple" name="exemple" type="text" placeholder="a link, or paste it here" autocomplete="off"></p></div>
 <label class="pot" for="f-honey">Leave empty</label><input class="pot" id="f-honey" name="_honey" tabindex="-1" autocomplete="off">
 <p class="erreur" id="erreur" role="alert" hidden></p>
-<div class="demande-bas"><span class="mono doux">ID No. 001</span><button type="submit" class="cta" id="bouton-envoyer">Send my request <span class="fl" aria-hidden="true">→</span></button></div>
-<svg class="tampon" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rond2" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><g fill="none" stroke="currentColor"><path d="M100 8 L165 35 L192 100 L165 165 L100 192 L35 165 L8 100 L35 35 Z" stroke-width="2.4"/><circle cx="100" cy="100" r="56" stroke-width="1.6"/></g><text><textPath href="#rond2" startOffset="0">FREE · NO COMMITMENT · REPLY IN 48 H · </textPath></text><text class="m" x="100" y="113" text-anchor="middle">OM</text></svg>
+<div class="demande-bas"><button type="submit" class="cta" id="bouton-envoyer">Send my request <span class="fl" aria-hidden="true">→</span></button></div>
 </form>
-<div class="envoi" id="envoi" hidden><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg><p class="grand">Request received.</p><p class="doux">I'll read it, and reply with a video within 48&nbsp;hours.</p></div>
+<div class="envoi" id="envoi" hidden><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg><p class="grand">Request received.</p><p class="doux">I'll read it and reply with a video within 48&nbsp;hours.</p></div>
 <p class="petit">Prefer a regular email? Write to me at <span class="direct">oscomarch@gmail.com</span></p>
 <p class="petit">What you write is only used to reply to you. Nothing is sold or shared. <a href="mentions-legales#confidentialite">Learn more (in French)</a></p>
 </section>
