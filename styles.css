@@ -23,10 +23,11 @@
 *{box-sizing:border-box;min-width:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--fond);color:var(--encre);font:16px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--fond);color:var(--encre);font:16px/1.6 var(--sans);overflow-x:hidden;overflow-x:clip;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 h1,h2,h3,h4,p,ul,ol,dl,dd,figure,blockquote{margin:0}
 ul,ol{padding:0;list-style:none}
 a{color:inherit}
+a,button,summary{touch-action:manipulation}
 img{max-width:100%}
 ::selection{background:rgba(61,80,166,.18)}
 :focus-visible{outline:2px solid var(--bleu);outline-offset:3px;border-radius:10px}
@@ -35,14 +36,14 @@ img{max-width:100%}
 .etroit{width:min(780px,calc(100% - 40px));margin-inline:auto}
 
 /* Le fond : quatre taches floues qui bougent à peine, et un grain très léger */
-.fond{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.fond i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.85;animation:derive 40s ease-in-out infinite alternate}
+.fond{position:fixed;top:0;right:0;bottom:0;left:0;z-index:-2;overflow:hidden;pointer-events:none}
+.fond i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.85;animation:derive 40s ease-in-out infinite alternate;will-change:transform}
 .fond .t1{width:58vmax;height:58vmax;left:-16vmax;top:-20vmax;background:#F0C9C4}
 .fond .t2{width:52vmax;height:52vmax;right:-20vmax;top:6vmax;background:#DAD3F0;animation-duration:48s}
 .fond .t3{width:46vmax;height:46vmax;left:16vmax;bottom:-26vmax;background:#F5DFC2;animation-duration:54s}
 .fond .t4{width:30vmax;height:30vmax;right:6vmax;bottom:4vmax;background:#D2E4EC;animation-duration:43s}
 @keyframes derive{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(5vmax,4vmax,0) scale(1.1)}}
-.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+.grain{position:fixed;top:0;right:0;bottom:0;left:0;z-index:-1;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .28 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
 
 /* Le verre */
@@ -57,14 +58,14 @@ img{max-width:100%}
 .bouton{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;border:0;cursor:pointer;
   background:var(--encre);color:#FAF7F4;font:500 15.5px/1 var(--sans);letter-spacing:-.005em;text-decoration:none;white-space:nowrap;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 10px 24px -12px rgba(29,27,26,.6);transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
-.bouton:hover{background:#000;transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 14px 28px -12px rgba(29,27,26,.65)}
+
 .bouton:active{transform:none}
 .bouton .fl{display:inline-block;transition:transform .2s ease}
-.bouton:hover .fl{transform:translateX(3px)}
+
 .bouton[disabled]{opacity:.6;cursor:default;transform:none}
 .bouton.petit{min-height:38px;padding:0 16px;font-size:14px;box-shadow:none}
 .lien-texte{display:inline-flex;align-items:center;gap:8px;font:500 16px/1.4 var(--sans);color:var(--bleu);text-decoration:none}
-.lien-texte:hover{text-decoration:underline;text-underline-offset:4px}
+
 
 /* La barre : une petite pilule de verre, plus opaque pour rester lisible au-dessus du texte */
 .barre{position:fixed;top:max(14px,env(safe-area-inset-top));left:50%;z-index:50;transform:translateX(-50%);
@@ -72,7 +73,7 @@ img{max-width:100%}
   background:rgba(249,246,244,.78);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
   border:1px solid rgba(255,255,255,.85);box-shadow:0 1px 2px rgba(40,20,20,.05),0 14px 34px -18px rgba(40,20,20,.35)}
 .barre .lien{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;font:500 14px/1 var(--sans);color:var(--gris);text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
-.barre .lien:hover{color:var(--encre)}
+
 .barre .lien.actif{color:var(--encre);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06)}
 .langues{display:inline-flex;margin:0 6px;padding:2px;border-radius:999px;background:rgba(29,27,26,.06)}
 .langues a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:32px;border-radius:999px;font:500 12px/1 var(--sans);letter-spacing:.02em;color:var(--gris);text-decoration:none}
@@ -91,7 +92,7 @@ img{max-width:100%}
 @media (min-width:861px){.feuille{display:none}}
 
 /* La carte */
-.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:120px 20px 56px;overflow-x:clip}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:120px 20px 56px;overflow-x:clip}
 .carte{--k:.64;width:min(900px,100%);padding:36px 40px 32px;border-radius:24px;background:linear-gradient(155deg,rgba(255,253,250,.84),rgba(255,251,247,.52));transition:transform .5s ease}
 .carte-haut{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
 .nom{font:600 clamp(24px,2.6vw,30px)/1.05 var(--sans);letter-spacing:-.01em;text-transform:uppercase}
@@ -190,11 +191,11 @@ details.detail[open] > summary{margin-bottom:6px}
 .duo .lien-texte{margin-top:26px}
 .liens{margin-top:14px}
 .liens a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:12px 0;border-top:1px solid var(--trait);text-decoration:none;transition:padding .2s ease}
-.liens a:hover{padding-left:6px}
+
 .liens b{display:block;font:600 17px/1.3 var(--sans);letter-spacing:-.01em}
 .liens small{display:block;margin-top:3px;font-size:14px;color:var(--gris)}
 .liens .fl{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(29,27,26,.05);color:var(--encre);font-size:15px;transition:background .2s ease}
-.liens a:hover .fl{background:var(--encre);color:#fff}
+
 
 /* Questions */
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px}
@@ -224,7 +225,7 @@ details[open] > summary::after{transform:rotate(45deg)}
   font:400 16px/1.4 var(--sans);color:var(--encre);transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;-webkit-appearance:none;appearance:none}
 .champ textarea{min-height:112px;resize:vertical}
 .champ input::placeholder,.champ textarea::placeholder{color:#A39B96}
-.champ input:hover,.champ textarea:hover{border-color:rgba(29,27,26,.22)}
+
 .champ input:focus,.champ textarea:focus{outline:none;border-color:var(--bleu);background:#fff;box-shadow:0 0 0 4px rgba(61,80,166,.13)}
 .envoyer{grid-column:1 / -1;margin-top:6px}
 .envoyer .bouton{width:100%;min-height:54px}
@@ -243,7 +244,7 @@ details[open] > summary::after{transform:rotate(45deg)}
 .pied .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;padding:28px 0 44px;border-top:1px solid var(--trait-fort);font-size:14px;color:var(--gris)}
 .pied nav{display:flex;flex-wrap:wrap;gap:8px 24px}
 .pied a{text-decoration:none}
-.pied a:hover{color:var(--encre)}
+
 
 /* Pages intérieures */
 .page-tete{padding-top:clamp(140px,16vw,200px)}
@@ -279,11 +280,11 @@ details[open] > summary::after{transform:rotate(45deg)}
 .legal dt{color:var(--gris);font-size:15px}
 .legal dd{font-weight:500}
 .maj{margin-top:18px;color:var(--gris)}
-.introuvable{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding:120px 20px}
+.introuvable{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding:120px 20px}
 .introuvable .lead{margin-top:0}
 .introuvable div{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .bouton.clair{background:rgba(255,255,255,.7);color:var(--encre);box-shadow:inset 0 0 0 1px rgba(29,27,26,.12)}
-.bouton.clair:hover{background:#fff}
+
 
 /* Apparition douce au défilement */
 .js .monte{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -334,3 +335,28 @@ details[open] > summary::after{transform:rotate(45deg)}
   .js .monte{opacity:1;transform:none;transition:none}
   .carte,.bouton,.feuille{transition:none}
 }
+
+/* Survols, seulement là où la souris existe (rien de collant au doigt sur téléphone) */
+@media (hover:hover){
+  .bouton:hover{background:#000;transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 14px 28px -12px rgba(29,27,26,.65)}
+  .bouton:hover .fl{transform:translateX(3px)}
+  .lien-texte:hover{text-decoration:underline;text-underline-offset:4px}
+  .barre .lien:hover{color:var(--encre)}
+  .liens a:hover{padding-left:6px}
+  .liens a:hover .fl{background:var(--encre);color:#fff}
+  .champ input:hover,.champ textarea:hover{border-color:rgba(29,27,26,.22)}
+  .pied a:hover{color:var(--encre)}
+  .bouton.clair:hover{background:#fff}
+}
+
+/* Navigateurs plus anciens et téléphones modestes */
+@supports not (aspect-ratio:1/1){.photo{height:245px}.portrait img{height:440px}}
+@media (max-width:700px){
+  .fond i{animation:none;filter:blur(60px)}
+  .grain{mix-blend-mode:normal;opacity:.12}
+  .verre:not(.carte){-webkit-backdrop-filter:none;backdrop-filter:none;background:linear-gradient(160deg,rgba(255,253,251,.86),rgba(255,251,248,.7))}
+}
+
+/* Très grands écrans : tout grandit un peu pour ne pas flotter dans le vide */
+@media (min-width:1900px){main,.pied,.barre,.feuille{zoom:1.15}.hero,.introuvable{min-height:calc(100vh / 1.15)}}
+@media (min-width:2400px){main,.pied,.barre,.feuille{zoom:1.3}.hero,.introuvable{min-height:calc(100vh / 1.3)}}
