@@ -6,278 +6,32 @@
 <title>Oscar Marchand · Retention for DTC subscription brands</title>
 <meta name="description" content="Retention for DTC subscription brands. I make your subscribers stay longer, and part of my pay comes from the extra revenue they bring.">
 <meta property="og:title" content="Oscar Marchand · Retention for DTC subscription brands">
-<meta property="og:description" content="Retention for DTC subscription brands. I make your subscribers stay longer.">
+<meta property="og:description" content="Retention for DTC subscription brands. I make your subscribers stay longer, and part of my pay comes from the extra revenue they bring.">
 <meta property="og:image" content="https://clients.oscomarch.com/oscar.jpg">
 <meta property="og:url" content="https://clients.oscomarch.com/">
-<meta name="theme-color" content="#EEE5E0">
+<meta name="theme-color" content="#F1EBE6">
+<link rel="canonical" href="https://clients.oscomarch.com/">
 <link rel="alternate" hreflang="en" href="https://clients.oscomarch.com/">
 <link rel="alternate" hreflang="fr" href="https://clients.oscomarch.com/fr">
-<link rel="preload" href="fonts/work-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css">
-<style>
-/* VOICE    calme, net, une carte d'identité posée sur du verre
-   IDEA     la carte de membre : tout ce qui compte tient sur une carte
-   PICTURE  la carte elle-même, avec la photo et le tampon
-   COLOUR   fond chair et lilas qui bouge doucement, verre clair, encre, stylo bleu
-   TYPE     Work Sans pour dire, M PLUS 1 Code pour les étiquettes, l'écriture d'Oscar en images sur la carte
-   LAYOUT   une carte au centre, puis des panneaux de verre aux titres bien visibles, une petite barre en verre */
-:root{
-  --fond:#EEE5E0;
-  --encre:#1E1C1B;
-  --doux:rgba(30,28,27,.62);
-  --trait:rgba(30,28,27,.14);
-  --stylo:#2A3681;
-  --fil:#3D50A6;
-  --sans:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'M PLUS 1 Code',ui-monospace,Menlo,Consolas,monospace;
-  --serif:'Young Serif',Georgia,serif;
-  color-scheme:light;
-}
-*{box-sizing:border-box;min-width:0}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:96px}
-body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-p{margin:0}
-a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--fil);outline-offset:3px;border-radius:8px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-.doux{color:var(--doux)}
-
-/* Le fond : des taches de couleur floues qui bougent à peine, et un grain de tissu */
-.fond{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.fond i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.9;animation:derive 38s ease-in-out infinite alternate}
-.fond .t1{width:58vmax;height:58vmax;left:-14vmax;top:-18vmax;background:#F2C6C2}
-.fond .t2{width:52vmax;height:52vmax;right:-18vmax;top:4vmax;background:#D8D1F0;animation-duration:46s}
-.fond .t3{width:46vmax;height:46vmax;left:18vmax;bottom:-24vmax;background:#F6DDBC;animation-duration:52s}
-.fond .t4{width:30vmax;height:30vmax;right:8vmax;bottom:6vmax;background:#CFE2EA;animation-duration:41s}
-@keyframes derive{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(6vmax,4vmax,0) scale(1.12)}}
-.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.32;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .28 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
-
-/* Le verre */
-.verre{position:relative;border-radius:28px;
-  background:linear-gradient(155deg,rgba(255,255,255,.62),rgba(255,255,255,.26));
-  -webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);
-  border:1px solid rgba(255,255,255,.78);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.3),0 1px 2px rgba(70,35,35,.06),0 30px 70px -34px rgba(70,35,35,.38)}
-.verre::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(120% 70% at 12% -10%,rgba(255,255,255,.7),transparent 55%),radial-gradient(80% 50% at 100% 110%,rgba(255,255,255,.35),transparent 60%);opacity:.8}
-.verre > *{position:relative}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.verre{background:rgba(255,252,248,.92)}}
-
-/* Barre du haut : une petite pilule de verre, sans logo */
-.barre{position:fixed;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:30;width:max-content;max-width:calc(100% - 24px);
-  display:flex;align-items:center;gap:2px;padding:5px;border-radius:999px}
-.barre .lien{display:inline-flex;align-items:center;min-height:38px;padding:0 13px;border-radius:999px;font:500 14px/1 var(--sans);text-decoration:none;color:var(--encre);white-space:nowrap;transition:background .2s ease}
-.barre .lien:hover{background:rgba(255,255,255,.65)}
-.barre .langues{margin:0 4px;padding:2px}
-.barre .langues a{min-width:32px;min-height:32px;font-size:11px}
-.barre .petit-cta{min-height:38px;padding:0 16px;font:500 14px/1 var(--sans);letter-spacing:0;text-transform:none}
-.barre #ouvrir{display:none;min-height:38px;padding:0 16px;font:500 14px/1 var(--sans);letter-spacing:0;text-transform:none}
-@media (max-width:820px){.barre .lien{display:none}.barre #ouvrir{display:inline-flex}}
-.nom-menu{font:600 15px var(--sans)}
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font:12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--encre);border:1px solid rgba(30,28,27,.16);background:rgba(255,255,255,.35);cursor:pointer;transition:background .2s ease,transform .2s ease}
-.pill:hover{background:rgba(255,255,255,.7)}
-.langues{display:inline-flex;padding:3px;border-radius:999px;border:1px solid rgba(30,28,27,.16);background:rgba(255,255,255,.3)}
-.langues a{min-width:40px;min-height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font:12px/1 var(--mono);text-decoration:none;color:var(--doux)}
-.langues a[aria-current]{background:var(--encre);color:#FBF8F3}
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;background:var(--encre);color:#FBF8F3;font:12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 24px -12px rgba(30,28,27,.6);transition:transform .2s ease,box-shadow .2s ease}
-.cta:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 14px 28px -12px rgba(30,28,27,.65)}
-.cta .fl{transition:transform .2s ease}.cta:hover .fl{transform:translateX(3px)}
-
-/* Le menu */
-.menu{position:fixed;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-8px);z-index:40;width:min(1040px,calc(100% - 24px));max-height:calc(100svh - 24px);overflow:auto;
-  padding:18px 22px 0;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease}
-.menu.ouvert{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.menu-tete{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--trait)}
-.fermer{width:44px;height:44px;border-radius:50%;border:0;background:transparent;cursor:pointer;font:22px/1 var(--sans);color:var(--encre)}
-.menu-corps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:28px;padding:30px 4px 34px}
-.menu-corps h3{margin:0 0 16px;font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--doux);font-weight:400}
-.menu-corps ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.menu-corps li a{font:13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:36px}
-.menu-corps li a:hover{color:var(--fil)}
-.menu-pied{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--trait);padding:16px 4px 18px}
-.menu-pied svg{width:84px;height:84px;margin-top:-70px}
-.voile{position:fixed;inset:0;z-index:35;background:rgba(238,229,224,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s ease}
-.voile.ouvert{opacity:1;pointer-events:auto}
-.barre{transition:opacity .2s ease}.barre.cache{opacity:0;pointer-events:none}
-@media (max-width:820px){.menu-corps{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-corps .menu-cta{grid-column:1 / -1}}
-
-/* La carte */
-.hero{overflow-x:clip;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:110px 16px 40px}
-.carte{width:min(900px,100%);padding:34px 38px 28px;border-radius:22px;background:linear-gradient(155deg,rgba(255,253,249,.82),rgba(255,251,246,.5));transition:transform .5s ease}
-.carte-haut{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
-.nom{margin:0;font:600 clamp(24px,2.6vw,30px)/1.05 var(--sans);letter-spacing:-.01em;text-transform:uppercase}
-.titulaire{margin-top:12px;font:12px/1.55 var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.carte{--k:.64}
-.valide{margin:0;font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-align:right;line-height:1.3}
-.valide span{display:block}
-.valide img.main{margin:6px 0 calc(var(--d) * var(--k) * -1px) auto}
-.valide b{display:block;margin-top:4px;font:500 21px/1.2 var(--sans);letter-spacing:-.01em;text-transform:none;color:var(--stylo)}
-img.main{display:block;width:calc(var(--w) * var(--k) * 1px);max-width:100%;height:auto;user-select:none;-webkit-user-drag:none}
-.corps{display:grid;grid-template-columns:minmax(0,1fr) 196px;gap:40px;align-items:center;margin-top:18px}
-.champs{margin:0;display:flex;flex-direction:column;gap:0}
-.champs div{display:grid;grid-template-columns:86px minmax(0,1fr);align-items:end;column-gap:14px;border-bottom:1px solid rgba(30,28,27,.34);height:62px;padding:0 0 5px}
-.champs dt{font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding-bottom:1px}
-.champs dd{margin:0;font:500 clamp(18px,1.9vw,21px)/1.25 var(--sans);letter-spacing:-.01em;color:var(--stylo)}
-.champs dd img.main{margin-bottom:calc(var(--d) * var(--k) * -1px - 3px)}
-.photo{position:relative;margin:0;aspect-ratio:4/5}
-.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;filter:grayscale(1) contrast(1.08) brightness(1.04);border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.14),0 14px 30px -18px rgba(40,20,20,.5)}
-.carte-bas{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;margin-top:26px}
-.carte-bas .mono{color:var(--doux)}
-.tampon{position:absolute;right:-56px;bottom:64px;width:150px;height:150px;transform:rotate(-14deg);color:#5B3A4A;opacity:.62;mix-blend-mode:multiply;pointer-events:none}
-.tampon text{font-family:var(--mono);font-size:13.5px;letter-spacing:2.4px;fill:currentColor}
-.tampon .m{font-family:var(--serif);font-size:38px;letter-spacing:0}
-.sous-carte{text-align:center;font:12px/1.8 var(--mono);letter-spacing:.04em;color:var(--doux)}
-@media (max-width:700px){
-  .carte{--k:.52;padding:22px 18px 22px;display:grid;grid-template-columns:minmax(0,1fr) 96px;column-gap:14px}
-  .carte-haut{grid-column:1;grid-row:1;flex-direction:column;gap:12px}
-  .valide{text-align:left}
-  .valide img.main{margin-left:0}
-  .corps{display:contents}
-  .photo{grid-column:2;grid-row:1;align-self:start;width:96px}
-  .photo img{border-radius:9px}
-  .champs{grid-column:1 / -1;grid-row:2;margin-top:6px}
-  .carte-bas{grid-column:1 / -1;grid-row:3}
-  .champs div{grid-template-columns:1fr;row-gap:8px;height:auto;padding-top:22px}
-  .valide img.main{margin-bottom:0}
-  .champs dt{font-size:11px}
-  .carte-bas{flex-direction:column;align-items:stretch;text-align:center}
-  .carte-bas .cta{width:100%}
-}
-
-/* Les panneaux */
-main{width:min(1000px,100%);margin:0 auto;padding:0 16px 24px;display:flex;flex-direction:column;gap:24px}
-.panneau{padding:clamp(24px,4.4vw,48px)}
-.ent{display:flex;align-items:center;gap:14px}
-.ent svg{width:clamp(40px,5vw,54px);height:clamp(40px,5vw,54px);flex:none}
-.ent h2{margin:0;font:600 clamp(34px,5vw,56px)/1.02 var(--sans);letter-spacing:-.035em}
-.dessin{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.lead{margin:20px 0 0;max-width:30em;font:400 clamp(20px,2.3vw,25px)/1.4 var(--sans);letter-spacing:-.01em;text-wrap:pretty}
-.intro{margin-top:14px;max-width:38em;color:var(--doux)}
-.guide{margin-top:30px;font:500 17px/1.5 var(--sans)}
-.guide + .tuiles{margin-top:14px}
-.infos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
-.info{border-radius:20px;padding:20px 22px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
-.info h3{margin:0 0 8px;font:600 20px/1.2 var(--sans);letter-spacing:-.01em}
-.info p{font-size:16px;line-height:1.55;color:var(--doux)}
-.sous-titre{margin:44px 0 0;font:600 clamp(22px,2.4vw,28px)/1.2 var(--sans);letter-spacing:-.02em}
-.tuiles{display:grid;gap:12px;margin-top:28px}
-.t5{grid-template-columns:1fr;gap:0;border-top:1px solid var(--trait)}
-.t5 .tuile{display:grid;grid-template-columns:40px 250px minmax(0,1fr);align-items:baseline;column-gap:16px;padding:18px 4px;background:none;border:0;border-bottom:1px solid var(--trait);border-radius:0;box-shadow:none}
-.t5 .tuile h3{margin:0;font-size:18px}
-.t5 .tuile p{font-size:16.5px}
-.t3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.t2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.tuile{border-radius:20px;padding:18px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
-.tuile .n{font:12px var(--mono);color:var(--fil)}
-.tuile h3{margin:10px 0 6px;font:600 17px/1.25 var(--sans)}
-.tuile p{font-size:15.5px;line-height:1.55;color:var(--doux)}
-.note{margin-top:22px;padding-top:18px;border-top:1px solid var(--trait);display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;font-size:16px}
-.note .mono{padding-top:4px;color:var(--fil)}
-@media (max-width:760px){.t5 .tuile{grid-template-columns:32px minmax(0,1fr);row-gap:6px}.t5 .tuile p{grid-column:2}}
-@media (max-width:640px){.t3,.t2,.infos{grid-template-columns:1fr}.note{grid-template-columns:1fr;gap:6px}}
-
-/* Preuves */
-.chiffre-cle{margin:12px 0 0;font:600 clamp(26px,3.4vw,38px)/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
-.stats div{border-top:1px solid var(--trait);padding-top:10px}
-.stats b{display:block;font:600 clamp(24px,2.8vw,32px)/1.1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
-.stats span{display:block;margin-top:4px;font:15px/1.4 var(--sans);color:var(--doux)}
-@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-details.detail{margin-top:22px;border-radius:20px;padding:0 20px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8)}
-details.detail summary{font:500 16px var(--sans);color:var(--fil)}
-details.detail[open]{padding-bottom:20px}
-details.detail p{margin:0 0 14px;font-size:16px}
-details.detail h3{margin:22px 0 8px;font:12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--doux);font-weight:400}
-.chiffres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.chiffres div{border-top:1px solid var(--trait);padding-top:8px}
-.chiffres b{display:block;font:600 20px/1.3 var(--sans)}
-.chiffres span{font:14px/1.4 var(--sans);color:var(--doux)}
-.objet{font-family:var(--serif)}
-.suite{margin-top:34px;font:500 clamp(19px,2vw,23px)/1.35 var(--sans);letter-spacing:-.01em;text-wrap:balance}
-.avis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
-figure.citation{margin:0;padding:20px;border-radius:20px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8);display:flex;flex-direction:column;gap:12px;justify-content:space-between}
-.citation blockquote{margin:0;font:18px/1.45 var(--serif)}
-.citation figcaption{font:13px/1.6 var(--mono);color:var(--doux)}
-@media (max-width:640px){.avis{grid-template-columns:1fr}}
-
-/* Qui est derrière */
-.liens-h{margin:34px 0 0;font:500 17px/1.5 var(--sans)}
-.liens{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--trait)}
-.liens a{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:56px;padding:10px 4px;border-bottom:1px solid var(--trait);text-decoration:none;transition:background .2s ease,padding .2s ease}
-.liens a:hover{background:rgba(255,255,255,.35);padding-left:12px}
-.liens .mono{color:var(--doux);font-size:13px}
-.liens b{font-weight:500}
-.liens .fl{font-family:var(--mono);color:var(--fil)}
-@media (max-width:560px){.liens a{grid-template-columns:minmax(0,1fr) auto}.liens .mono{grid-column:1 / -1;margin-bottom:-12px}}
-
-/* Questions */
-.faq{margin-top:22px}
-.faq details{border-top:1px solid var(--trait)}
-.faq details:last-child{border-bottom:1px solid var(--trait)}
-summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 0;font-weight:500}
-summary::-webkit-details-marker{display:none}
-summary::after{content:'+';font:18px var(--mono);color:var(--fil);transition:transform .2s ease}
-details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding-bottom:18px;color:var(--doux)}
-
-/* La demande d'audit, en carte */
-.demande{margin-top:26px;padding:30px 34px 26px;border-radius:22px;background:linear-gradient(155deg,rgba(255,253,249,.85),rgba(255,251,246,.55));border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 #fff,0 20px 50px -30px rgba(70,35,35,.35);position:relative;overflow:hidden}
-.demande-tete{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:6px}
-.demande-tete b{font:600 20px/1.1 var(--sans);text-transform:uppercase}
-.lignes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
-.ligne{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid rgba(30,28,27,.42);padding-top:14px}
-.ligne.large{grid-column:1 / -1}
-.ligne label{flex:none;font:13px var(--mono);letter-spacing:.05em;text-transform:uppercase}
-.ligne input,.ligne textarea{flex:1;width:100%;border:0;background:transparent;font:500 19px/1.3 var(--sans);letter-spacing:-.01em;color:var(--stylo);padding:4px 2px 6px;border-radius:4px}
-.ligne textarea{resize:vertical;min-height:3em;line-height:1.35}
-.ligne input::placeholder,.ligne textarea::placeholder{color:rgba(42,54,129,.38)}
-.demande-bas{display:flex;justify-content:flex-end;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
-.demande .tampon{right:-18px;bottom:auto;top:-22px;width:120px;height:120px}
-.pot{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
-.erreur{margin-top:14px;font-size:15px}
-.envoi{margin-top:26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px}
-.envoi svg{width:96px;height:96px}
-.envoi .grand{font:500 26px/1.2 var(--sans)}
-.petit{font-size:14px;color:var(--doux);margin-top:14px}
-.direct{font-family:var(--mono);user-select:all}
-@media (max-width:640px){.demande{padding:22px 18px}.lignes{grid-template-columns:1fr}.ligne{flex-direction:column;gap:0}.demande-bas .cta{width:100%}.demande .tampon{width:84px;height:84px;right:-10px;top:-12px}}
-
-footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font:12px var(--mono);color:var(--doux)}
-
-/* Apparition douce au défilement */
-.js .monte{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.js .monte.vu{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .fond i{animation:none}
-  .js .monte{opacity:1;transform:none;transition:none}
-  .carte,.cta,.menu,.voile{transition:none}
-}
-</style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/work-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/styles.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="fond" aria-hidden="true"><i class="t1"></i><i class="t2"></i><i class="t3"></i><i class="t4"></i></div>
 <div class="grain" aria-hidden="true"></div>
-
-<header class="barre verre">
+<header class="barre">
 <nav aria-label="Sections" style="display:contents"><a class="lien" href="#offre">What I do</a><a class="lien" href="#comment">How it works</a><a class="lien" href="#resultats">Results</a><a class="lien" href="#moi">About me</a></nav>
-<nav class="langues" aria-label="Language"><a href="./" aria-current="true" lang="en" hreflang="en">EN</a><a href="fr" lang="fr" hreflang="fr" title="Français">FR</a></nav>
-<button class="pill" id="ouvrir" aria-expanded="false" aria-controls="menu">Menu</button>
-<a href="#lettre" class="cta petit-cta">Free audit</a>
+<nav class="langues" aria-label="Language"><a href="./" lang="en" hreflang="en" aria-current="true">EN</a><a href="fr" lang="fr" hreflang="fr" title="Français">FR</a></nav>
+<button class="ouvrir" id="ouvrir" aria-expanded="false" aria-controls="feuille">Menu<i aria-hidden="true"></i></button>
+<a href="#audit" class="bouton petit">Free audit</a>
 </header>
+<nav class="feuille" id="feuille" aria-label="Menu"><a href="#offre">What I do</a><a href="#comment">How it works</a><a href="#resultats">Results</a><a href="#moi">About me</a><a href="#questions">Questions</a><a href="about">My story</a><a href="#audit" class="bouton">Get my free audit <span class="fl" aria-hidden="true">→</span></a></nav>
 
-<div class="voile" id="voile"></div>
-<nav class="menu verre" id="menu" aria-label="Menu">
-<div class="menu-tete"><span class="nom-menu">Oscar Marchand</span><button class="fermer" id="fermer" aria-label="Close menu">×</button></div>
-<div class="menu-corps"><div><h3>The offer</h3><ul><li><a href="#offre">What I do</a></li><li><a href="#comment">How it works</a></li><li><a href="#pourqui">Who it's for</a></li><li><a href="#prix">What you pay</a></li></ul></div><div><h3>Proof</h3><ul><li><a href="#resultats">Results</a></li><li><a href="#avis">Reviews</a></li></ul></div><div><h3>About</h3><ul><li><a href="#moi">Who I am</a></li><li><a href="about">My story</a></li><li><a href="https://oscomarch.com" target="_blank" rel="noopener">oscomarch.com</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="mailto:oscomarch@gmail.com">Email</a></li><li><a href="#lettre">Free audit</a></li></ul></div><div class="menu-cta"><a href="#lettre" class="cta">Get my free audit <span class="fl" aria-hidden="true">→</span></a></div></div>
-<div class="menu-pied"><span class="mono doux">© 2026 · Oscar Marchand EI · Paris</span><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg></div>
-</nav>
-
+<main>
 <section class="hero" id="haut">
 <h1 class="sr">Oscar Marchand, retention for DTC subscription brands. I make your subscribers stay longer.</h1>
 <article class="carte verre" id="carte">
@@ -289,33 +43,37 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 <dl class="champs"><div><dt>For</dt><dd><img class="main" src="ecriture/brands.png" alt="DTC subscription brands" width="450" height="50" style="--w:450;--d:12"></dd></div><div><dt>I make</dt><dd><img class="main" src="ecriture/longer.png" alt="your subscribers stay longer" width="468" height="84" style="--w:468;--d:41"></dd></div><div><dt>You get</dt><dd><img class="main" src="ecriture/ltv.png" alt="more months and more LTV from each one" width="484" height="62" style="--w:484;--d:30"></dd></div><div><dt>You pay</dt><dd><img class="main" src="ecriture/fee.png" alt="a fixed fee + a share of the gain" width="549" height="78" style="--w:549;--d:42"></dd></div><div><dt>Proof</dt><dd><img class="main" src="ecriture/proof.png" alt="948 annual plans in 4 weeks" width="474" height="57" style="--w:474;--d:18"></dd></div></dl>
 <figure class="photo"><img src="oscar.jpg" alt="Oscar Marchand" width="400" height="400"></figure>
 </div>
-<div class="carte-bas"><a href="#lettre" class="cta">Get my free audit <span class="fl" aria-hidden="true">→</span></a><span class="mono">Free, a video within 48&nbsp;hours</span></div>
+<div class="carte-bas"><a href="#audit" class="bouton">Get my free audit <span class="fl" aria-hidden="true">→</span></a><span>Free, a video within 48&nbsp;hours</span></div>
 </article>
-<p class="sous-carte">It's <span id="heure">--:--</span> in Paris, and I answer every request myself.</p>
+<p class="horloge">It's <span id="heure">--:--</span> in Paris, and I answer every request myself.</p>
 </section>
 
-<main>
-<section class="panneau verre monte" id="offre">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M22 14 Q38 13 54 14 Q55 40 54 66 Q38 67 22 66 Q21 40 22 14 Z"/><path d="M16 22 L21.7 22 M16 32 L21.6 32 M16 42 L21.5 42 M16 52 L21.6 52 M16 62 L21.9 62"/><path d="M29 26 Q38 25 47 26 M29 34 Q37 35 45 34 M29 42 Q36 41 41 42"/><path d="M52 62 L66 24 Q68 20 71 22 Q73 24 71 28 L57 65 Z"/><path d="M52 62 L50 70 L57 65"/></g></svg><h2>What I do</h2></div>
-<p class="lead">I write and send the emails your subscribers get after they sign up, so they stay longer and each one brings you more money.</p>
-<p class="intro">I handle everything, from who gets which email to the words and the weekly tests. You have nothing to manage.</p>
-<p class="guide">Subscribers usually leave at five moments. Here is what I send at each one.</p>
-<ul class="tuiles t5" role="list" style="list-style:none;padding:0"><li class="tuile"><span class="n">01</span><h3>After the first order</h3><p>I show them how to use the product and what to expect, so they don't give up in the first few weeks.</p></li><li class="tuile"><span class="n">02</span><h3>Before each charge</h3><p>I give them a reason to keep the next delivery, a few days before their card is charged.</p></li><li class="tuile"><span class="n">03</span><h3>When they want a break</h3><p>I show them they can skip or change their next delivery in one click, before they go looking for the cancel button.</p></li><li class="tuile"><span class="n">04</span><h3>When they're happy</h3><p>I offer the right people a 6 or 12 month plan paid upfront, at the moment they're most ready to say yes.</p></li><li class="tuile"><span class="n">05</span><h3>When they cancel</h3><p>I answer the real reason they want to leave, and I leave the door open for them to come back.</p></li></ul>
+<section class="section wrap" id="offre">
+<div class="tete monte"><h2 class="titre">What I do</h2><p class="lead">I write and send the emails your subscribers get after they sign up, so they stay longer and each one brings you more money. <span>I handle everything, from who gets which email to the words and the weekly tests. You have nothing to manage.</span></p></div>
+<div class="contenu verre boite monte">
+<div class="moments-tete"><h3 class="st">The five moments where subscribers leave</h3><p class="texte-gris">And what I send at each one.</p></div>
+<ol><li class="moment"><span class="num">1</span><h4>After the first order</h4><p>I show them how to use the product and what to expect, so they don't give up in the first few weeks.</p></li><li class="moment"><span class="num">2</span><h4>Before each charge</h4><p>I give them a reason to keep the next delivery, a few days before their card is charged.</p></li><li class="moment"><span class="num">3</span><h4>When they want a break</h4><p>I show them they can skip or change their next delivery in one click, before they go looking for the cancel button.</p></li><li class="moment"><span class="num">4</span><h4>When they're happy</h4><p>I offer the right people a 6 or 12 month plan paid upfront, at the moment they're most ready to say yes.</p></li><li class="moment"><span class="num">5</span><h4>When they cancel</h4><p>I answer the real reason they want to leave, and I leave the door open for them to come back.</p></li></ol>
+</div>
 </section>
 
-<section class="panneau verre monte" id="comment">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M15 16 Q40 14 65 16 Q67 40 65 65 Q40 67 15 65 Q13 40 15 16 Z"/><path d="M24 24 L24 56 L58 56"/><path d="M28 50 Q32 45 36 47 Q41 49 45 40 Q49 32 56 28"/><path d="M56 28 L50 28.6 M56 28 L54.6 33.8"/></g></svg><h2>How it works</h2></div>
-<p class="lead">We start with a free audit. Then I take care of everything, and every month you see what it brought in.</p>
-<ol class="tuiles t3" style="list-style:none;padding:0"><li class="tuile"><span class="n">01</span><h3>A free audit</h3><p>You tell me about your brand in two minutes. Within 48&nbsp;hours, I send you a video that shows what your subscribers receive today and what I would change first.</p></li><li class="tuile"><span class="n">02</span><h3>We measure where you start</h3><p>We pick the number that matters most, usually how many months a subscriber stays. A small random group keeps your current emails, so we see exactly what my emails add, without counting your ads or your promotions.</p></li><li class="tuile"><span class="n">03</span><h3>I run it every week</h3><p>I write, send and test new emails every week. Each month, you get the result and the plan for the next month.</p></li></ol>
-<div class="infos"><div class="info" id="pourqui"><h3>Who it's for</h3><p>DTC brands that sell on subscription, like supplements, coffee, pet food or skincare. You have around 1,000 active subscribers or more, on Shopify with Klaviyo and Recharge, Skio or Loop. I work with three brands at a time.</p></div><div class="info" id="prix"><h3>What you pay</h3><p>A fixed monthly fee, plus a share of the extra revenue my emails bring in. If they don't make a difference, I earn less.</p></div></div>
+<section class="section wrap" id="comment">
+<div class="tete monte"><h2 class="titre">How it works</h2><p class="lead">We start with a free audit. Then I take care of everything, and every month you see what it brought in.</p></div>
+<div class="contenu">
+<ol class="g3 monte"><li class="etape verre boite"><span class="pastille">Step 1</span><h3 class="st">A free audit</h3><p>Tell me about your brand in two minutes. Within 48&nbsp;hours, you get a video showing what your subscribers receive today and what I would change first.</p></li><li class="etape verre boite"><span class="pastille">Step 2</span><h3 class="st">We measure your starting point</h3><p>We pick the number that matters, usually how long a subscriber stays. A small random group keeps your current emails, so we see exactly what mine add.</p></li><li class="etape verre boite"><span class="pastille">Step 3</span><h3 class="st">I run it every week</h3><p>I write, send and test new emails every week. Each month, you get the results and the plan for the next one.</p></li></ol>
+<div class="g2 monte">
+<div class="verre boite colonne" id="pourqui"><h3 class="st">Who it's for</h3><ul class="coches"><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>DTC brands that sell on subscription, like supplements, coffee, pet food or skincare</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>Around 1,000 active subscribers or more</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>Shopify with Klaviyo, and Recharge, Skio or Loop</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>I work with three brands at a time</span></li></ul></div>
+<div class="verre boite colonne" id="prix"><h3 class="st">What you pay</h3><ul class="coches"><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>A fixed monthly fee</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>Plus a share of the extra revenue my emails bring in</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>Measured against the group that keeps your current emails</span></li></ul><p class="boite-pied">If my emails don't make a difference, I earn less.</p></div>
+</div>
+</div>
 </section>
 
-<section class="panneau verre monte" id="resultats">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M27 50 Q40 47 53 50 L49 69 Q40 72 31 69 Z"/><path d="M40 48.5 Q38 34 41 16"/><path d="M39.25 39.5 Q29 31 23 35 Q28 44 39.25 39.5 Z"/><path d="M39.4 29.8 Q49 20 56 24 Q51 34 39.4 29.8 Z"/><path d="M41 16 Q37 9 41 4 Q45 9 41 16 Z"/></g></svg><h2>Results</h2></div>
-<p class="lead">This summer, I ran a four week campaign for Abby, an invoicing app for freelancers that runs on subscriptions.</p>
-<p class="chiffre-cle">1,514 people subscribed, and 948 of them chose the annual plan.</p>
+<section class="section wrap" id="resultats">
+<div class="tete monte"><h2 class="titre">Results</h2><p class="lead">This summer, I ran a four week campaign for Abby, an invoicing app for freelancers that runs on subscriptions.</p></div>
+<article class="contenu verre boite monte">
+<p class="etiquette">Abby · Summer 2026 · 4 weeks</p>
+<p class="grand">1,514 people subscribed, and 948 of them chose the annual plan.</p>
 <div class="stats"><div><b>€121,000</b><span>paid upfront</span></div><div><b>4 in 5</b><span>had never paid before</span></div><div><b>+39%</b><span>new paid subscriptions a day</span></div><div><b>0.13%</b><span>unsubscribed</span></div></div>
-<p class="intro">I split their users into 31 groups and wrote 183 emails, each one for a single group. The emails that worked best told each customer the exact amount they were about to lose. It was my third campaign for Abby, and the three together brought in over €500,000 in sales.</p>
+<div class="cas-texte"><p>I split their users into 31 groups and wrote 183 emails, each one for a single group. The emails that worked best told each customer the exact amount they were about to lose.</p><p>It was my third campaign in a row for Abby, after Black Friday and January, with two different heads of marketing. Together, the three brought in over €500,000 in sales.</p></div>
 <details class="detail">
 <summary>See the full breakdown</summary>
 <p>Abby is an invoicing app for freelancers in France. It runs on subscriptions, so it has the same problem as you. Getting someone to pay once is hard, and keeping them is where the money is.</p>
@@ -342,48 +100,26 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 <p>This is a comparison with the month before, not a controlled test. Some of these people would have subscribed anyway. And most email tools are generous when they count which sales came from an email.</p>
 <p>That's exactly why, with you, a small group of customers doesn't get the new emails from day one. So the number we look at is the real one.</p>
 </details>
-<p class="suite">Abby hired me for three campaigns in a row, for Black Friday, January and the summer, with two different heads of marketing.</p>
-<h3 class="sous-titre">What my clients say</h3>
-<div class="avis" id="avis">
-<figure class="citation">
-<blockquote>“Oscar wrote the sale campaign from A to Z, and handled the segmentation too. I recommend him without hesitation.”</blockquote>
-<figcaption>Benjamin Gardien · co-founder and CMO, Abby · review on Malt, translated from French</figcaption>
-</figure>
-<figure class="citation">
-<blockquote>“I'm really happy with what you delivered. It's exactly what I needed.”</blockquote>
-<figcaption>Lou Sernaglia · CMO, Abby, after Black Friday · translated from French<br>A few weeks later, she gave me the whole January campaign.</figcaption>
-</figure>
-<figure class="citation">
-<blockquote>“Overall it was really positive. Open rates were well above our usual averages.”</blockquote>
-<figcaption>Benjamin Gardien · after the summer campaign · translated from French</figcaption>
-</figure>
-<figure class="citation">
-<blockquote>“He turned our website and our email campaigns into a real growth engine. Every email he writes grabs attention and gets people to engage.”</blockquote>
-<figcaption>Caroline Guilhot · CEO, Rond Comme Un Carré Architecture · recommendation on Malt, translated from French</figcaption>
-</figure>
-<figure class="citation">
-<blockquote>“Oscar excels at writing emails that hit. Messages that grab attention, get readers engaged and boost conversions.”</blockquote>
-<figcaption>Henri Lamotte · COO, PureBazaar · recommendation on Malt, translated from French</figcaption>
-</figure>
-<figure class="citation">
-<blockquote>“Oscar understood what we needed the first time, delivered on time, and came up with wording that was original and to the point.”</blockquote>
-<figcaption>Eric · Vivre Libre · review on Malt, translated from French</figcaption>
-</figure>
+</article>
+<h3 class="avis-tete monte">What my clients say</h3>
+<div class="monte"><div class="avis" id="avis"><figure class="verre"><blockquote>“Oscar wrote the sale campaign from A to Z, and handled the segmentation too. I recommend him without hesitation.”</blockquote><figcaption><b>Benjamin Gardien</b><span>co-founder and CMO, Abby</span><small>Review on Malt, translated from French</small></figcaption></figure><figure class="verre"><blockquote>“I'm really happy with what you delivered. It's exactly what I needed.”</blockquote><figcaption><b>Lou Sernaglia</b><span>CMO, Abby, after Black Friday</span><small>Translated from French</small><em>A few weeks later, she gave me the whole January campaign.</em></figcaption></figure><figure class="verre"><blockquote>“Overall it was really positive. Open rates were well above our usual averages.”</blockquote><figcaption><b>Benjamin Gardien</b><span>after the summer campaign</span><small>Translated from French</small></figcaption></figure><figure class="verre"><blockquote>“He turned our website and our email campaigns into a real growth engine. Every email he writes grabs attention and gets people to engage.”</blockquote><figcaption><b>Caroline Guilhot</b><span>CEO, Rond Comme Un Carré Architecture</span><small>Recommendation on Malt, translated from French</small></figcaption></figure><figure class="verre"><blockquote>“Oscar excels at writing emails that hit. Messages that grab attention, get readers engaged and boost conversions.”</blockquote><figcaption><b>Henri Lamotte</b><span>COO, PureBazaar</span><small>Recommendation on Malt, translated from French</small></figcaption></figure><figure class="verre"><blockquote>“Oscar understood what we needed the first time, delivered on time, and came up with wording that was original and to the point.”</blockquote><figcaption><b>Eric</b><span>Vivre Libre</span><small>Review on Malt, translated from French</small></figcaption></figure></div></div>
+</section>
+
+<section class="section wrap" id="moi">
+<div class="duo">
+<div class="monte">
+<div class="tete"><h2 class="titre">Who I am</h2><p class="lead">I write the emails, and I read the data behind them. <span>Most people in this job only do one of the two.</span></p></div>
+<p>I've been writing emails for brands since I was 16. It's what paid for my move to Paris and for my studies. I studied economics at La Sorbonne, where I finished in the top 2%, then at Columbia in New York, where I made the Dean's List. Today I'm at ESCP, and I teach microeconomics and statistics at La Sorbonne.</p>
+<a class="lien-texte" href="about">Read my story <span class="fl" aria-hidden="true">→</span></a>
 </div>
-
+<div class="verre boite monte"><h3 class="st">Where else you can see my work</h3><ul class="liens"><li><a href="https://fastflo.ai" target="_blank" rel="noopener"><span><b>Fastflo</b><small>Growth</small></span><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://getnao.io" target="_blank" rel="noopener"><span><b>Nao Labs · Y Combinator</b><small>Growth</small></span><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://astera.holdings" target="_blank" rel="noopener"><span><b>Astera</b><small>Growth</small></span><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://oscomarch.com" target="_blank" rel="noopener"><span><b>oscomarch.com</b><small>Writing</small></span><span class="fl" aria-hidden="true">↗</span></a></li></ul></div>
+</div>
 </section>
 
-<section class="panneau verre monte" id="moi">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M40 8 L56 32 Q50 48 46 66 L34 66 Q30 48 24 32 Z"/><circle cx="40" cy="36" r="3"/><path d="M40 39 L40 66"/></g></svg><h2>Who I am</h2></div>
-<p class="lead">I write the emails, and I read the data behind them. Most people in this job only do one of the two.</p>
-<p class="intro">I've been writing emails for brands since I was 16. It's what paid for my move to Paris and for my studies. I studied economics at La Sorbonne, where I finished in the top 2%, then at Columbia in New York, where I made the Dean's List. Today I'm at ESCP, and I teach microeconomics and statistics at La Sorbonne.</p>
-<p class="liens-h">Where else you can see my work</p>
-<ul class="liens"><li><a href="https://fastflo.ai" target="_blank" rel="noopener"><span class="mono">Growth</span><b>Fastflo</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://getnao.io" target="_blank" rel="noopener"><span class="mono">Growth</span><b>Nao Labs · Y Combinator</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://astera.holdings" target="_blank" rel="noopener"><span class="mono">Growth</span><b>Astera</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="https://oscomarch.com" target="_blank" rel="noopener"><span class="mono">Writing</span><b>oscomarch.com</b><span class="fl" aria-hidden="true">↗</span></a></li><li><a href="about"><span class="mono">Outside work</span><b>My story</b><span class="fl" aria-hidden="true">→</span></a></li></ul>
-</section>
-
-<section class="panneau verre monte" id="questions">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M16 20 Q40 16 64 20 Q68 35 64 50 Q49 54 34 52 L22 63 L25 50 Q14 46 16 34 Q15 27 16 20 Z"/><path d="M34 30 Q34 24 40 24 Q47 24 47 30 Q47 35 41 37 L41 41"/><circle cx="41" cy="46" r="1"/></g></svg><h2>Questions</h2></div>
-<div class="faq"><details>
+<section class="section wrap" id="questions">
+<div class="duo">
+<div class="tete monte"><h2 class="titre">Questions</h2><p class="lead">What brands usually ask me before we start.</p><p class="autre">Another question? Write to me at <a href="mailto:oscomarch@gmail.com">oscomarch@gmail.com</a></p></div>
+<div class="faq verre boite monte"><details>
 <summary>Will it still sound like us?</summary>
 <p>Yes. I read everything you've written before, and I talk to your customers. If it doesn't sound like you, it doesn't go out.</p>
 </details><details>
@@ -396,115 +132,35 @@ footer{width:min(1000px,100%);margin:0 auto;padding:12px 20px 34px;display:flex;
 <summary>When will I see results?</summary>
 <p>The first sends go out in the first month. The real progress shows after two or three months, once the system has learned enough about your customers.</p>
 </details></div>
+</div>
 </section>
 
-<section class="panneau verre monte" id="lettre">
-<div class="ent"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg><h2>Get your free audit</h2></div>
-<p class="lead">Fill in this card and I'll send you a video within 48&nbsp;hours. I'll show you what I would change, where I would start, and roughly how much you're leaving on the table. It's free, and you don't owe me anything.</p>
-<form class="demande" id="form-lettre" novalidate>
-<div class="demande-tete"><b>Audit request</b><span class="mono doux">Free, reply within 48&nbsp;hours</span></div>
-<div class="lignes"><p class="ligne"><label for="f-prenom">Name</label><input id="f-prenom" name="prenom" type="text" placeholder="first name" autocomplete="given-name" required></p><p class="ligne"><label for="f-marque">Brand</label><input id="f-marque" name="marque" type="text" placeholder="your brand" autocomplete="organization" required></p><p class="ligne"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@brand.com" autocomplete="email" required></p><p class="ligne"><label for="f-audience">Subscribers</label><input id="f-audience" name="audience" type="text" placeholder="about 2,000" autocomplete="off" inputmode="numeric"></p><p class="ligne large"><label for="f-envie">I'd like to change</label><textarea id="f-envie" name="envie" rows="2" placeholder="subscribers cancel after the second box…" required></textarea></p><p class="ligne large"><label for="f-exemple">One of our emails</label><input id="f-exemple" name="exemple" type="text" placeholder="a link, or paste it here" autocomplete="off"></p></div>
+<section class="section wrap" id="audit">
+<div class="audit verre monte">
+<div>
+<h2 class="titre">Get your free audit</h2>
+<p class="lead">Fill in the form and I'll send you a video within 48&nbsp;hours.</p>
+<ul class="coches"><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>What your subscribers receive today</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>What I would change first</span></li><li><svg viewBox="0 0 22 22" aria-hidden="true"><circle class="coche-c" cx="11" cy="11" r="11"/><path class="coche-t" d="M6.6 11.4l3 3 5.9-6.2"/></svg><span>Roughly how much you're leaving on the table</span></li></ul>
+<p class="audit-fin">It's free, and you don't owe me anything.<br>Prefer a regular email? <a href="mailto:oscomarch@gmail.com">oscomarch@gmail.com</a></p>
+</div>
+<div>
+<form class="formulaire" id="form-audit" novalidate>
+<p class="champ"><label for="f-prenom">Name</label><input id="f-prenom" name="prenom" type="text" placeholder="First name" autocomplete="given-name" required></p><p class="champ"><label for="f-marque">Brand</label><input id="f-marque" name="marque" type="text" placeholder="Your brand" autocomplete="organization" required></p><p class="champ"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@brand.com" autocomplete="email" required></p><p class="champ"><label for="f-audience">Active subscribers<small>optional</small></label><input id="f-audience" name="audience" type="text" placeholder="About 2,000" autocomplete="off" inputmode="numeric"></p><p class="champ large"><label for="f-envie">What you'd like to change</label><textarea id="f-envie" name="envie" rows="4" placeholder="Subscribers cancel after the second box…" required></textarea></p><p class="champ large"><label for="f-exemple">One of your emails<small>optional</small></label><input id="f-exemple" name="exemple" type="text" placeholder="A link, or paste it here" autocomplete="off"></p>
 <label class="pot" for="f-honey">Leave empty</label><input class="pot" id="f-honey" name="_honey" tabindex="-1" autocomplete="off">
 <p class="erreur" id="erreur" role="alert" hidden></p>
-<div class="demande-bas"><button type="submit" class="cta" id="bouton-envoyer">Send my request <span class="fl" aria-hidden="true">→</span></button></div>
+<p class="envoyer"><button type="submit" class="bouton" id="bouton-envoyer">Send my request <span class="fl" aria-hidden="true">→</span></button></p>
+<p class="prive">What you write is only used to reply to you. Nothing is sold or shared. <a href="mentions-legales#confidentialite">Privacy (in French)</a></p>
 </form>
-<div class="envoi" id="envoi" hidden><svg viewBox="0 0 80 80" aria-hidden="true"><g class="dessin"><path d="M13 25 Q40 23 67 25 Q68 42 67 59 Q40 61 13 59 Q12 42 13 25 Z"/><path d="M13 25 Q27 37 40 45 Q53 37 67 25"/><path d="M13 59 L32.1 39.8 M67 59 L47.9 39.8"/></g></svg><p class="grand">Request received.</p><p class="doux">I'll read it and reply with a video within 48&nbsp;hours.</p></div>
-<p class="petit">Prefer a regular email? Write to me at <span class="direct">oscomarch@gmail.com</span></p>
-<p class="petit">What you write is only used to reply to you. Nothing is sold or shared. <a href="mentions-legales#confidentialite">Learn more (in French)</a></p>
+<div class="envoi" id="envoi" hidden><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="coche-c" cx="28" cy="28" r="28"/><path class="coche-t" d="M18 28.8l7 7 13.5-14" style="stroke-width:2.4"/></svg><b>Request received.</b><p>I'll read it and reply with a video within 48&nbsp;hours.</p></div>
+</div>
+</div>
 </section>
 </main>
-
-<footer><span>Oscar Marchand EI · SIREN 924 921 158 · Paris</span><span><a href="mentions-legales">Legal notice</a> · <a href="mentions-legales#confidentialite">Privacy</a></span></footer>
-
-<script>
-(function () {
-  var heure = document.getElementById('heure');
-  function tick() { try { heure.textContent = new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit' }); } catch (e) {} }
-  tick(); setInterval(tick, 30000);
-
-  /* Menu */
-  var menu = document.getElementById('menu'), voile = document.getElementById('voile'), ouvrir = document.getElementById('ouvrir'), fermer = document.getElementById('fermer');
-  function basculer(o) {
-    menu.classList.toggle('ouvert', o); voile.classList.toggle('ouvert', o); document.querySelector('.barre').classList.toggle('cache', o);
-    ouvrir.setAttribute('aria-expanded', o ? 'true' : 'false');
-    if (o) fermer.focus(); else ouvrir.focus();
-  }
-  ouvrir.addEventListener('click', function () { basculer(true); });
-  fermer.addEventListener('click', function () { basculer(false); });
-  voile.addEventListener('click', function () { basculer(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('ouvert')) basculer(false); });
-  Array.prototype.forEach.call(menu.querySelectorAll('a[href^="#"]'), function (a) { a.addEventListener('click', function () { basculer(false); }); });
-
-  /* Apparition au défilement */
-  var monte = document.querySelectorAll('.monte');
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); obs.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
-    Array.prototype.forEach.call(monte, function (el) { obs.observe(el); });
-  } else { Array.prototype.forEach.call(monte, function (el) { el.classList.add('vu'); }); }
-
-  /* La carte suit un peu la souris */
-  var carte = document.getElementById('carte');
-  var calme = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!calme && window.matchMedia('(pointer: fine)').matches) {
-    carte.addEventListener('mousemove', function (e) {
-      var r = carte.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      carte.style.transform = 'perspective(1200px) rotateY(' + (x * 4) + 'deg) rotateX(' + (-y * 4) + 'deg)';
-    });
-    carte.addEventListener('mouseleave', function () { carte.style.transform = ''; });
-  }
-
-  /* La demande */
-  var form = document.getElementById('form-lettre'), erreur = document.getElementById('erreur'), bouton = document.getElementById('bouton-envoyer'), envoi = document.getElementById('envoi');
-  var ADRESSE = 'oscomarch@gmail.com';
-  /* Clé Web3Forms : publique par conception, elle dit seulement à quelle adresse envoyer */
-  var CLE_WEB3FORMS = 'a63e1a6d-1380-4fa7-a410-fd2dbf92d078';
-  var LIBELLE = "Send my request" + ' <span class="fl" aria-hidden="true">→</span>';
-  function val(id) { return (document.getElementById(id).value || '').trim(); }
-  function texte() {
-    return "Hi Oscar," + '\n\n'
-      + "Name" + ' · ' + val('f-prenom') + '\n'
-      + "Brand" + ' · ' + val('f-marque') + '\n'
-      + "Email" + ' · ' + val('f-email') + '\n'
-      + "Active subscribers" + ' · ' + (val('f-audience') || '…') + '\n\n'
-      + "I'd like to change" + '\n' + val('f-envie') + '\n\n'
-      + "One of our emails" + '\n' + (val('f-exemple') || '…') + '\n\n'
-      + "Thanks" + ',\n' + val('f-prenom');
-  }
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    erreur.hidden = true;
-    if (!form.checkValidity()) {
-      var premier = form.querySelector(':invalid');
-      erreur.textContent = "Missing your name, your brand, what you'd like to change, or a valid email.";
-      erreur.hidden = false;
-      if (premier) premier.focus();
-      return;
-    }
-    if (val('f-honey')) return;
-    bouton.disabled = true;
-    bouton.textContent = "Sending…";
-    var sujet = "Nouvelle demande (EN) · " + val('f-prenom') + ', ' + val('f-marque') + (val('f-audience') ? ' · ' + val('f-audience') + ' abonnés' : '');
-    var data = {
-      access_key: CLE_WEB3FORMS, subject: sujet, from_name: 'Demandes clients', replyto: val('f-email'), botcheck: '',
-      'La demande': texte(), 'Prénom': val('f-prenom'), 'Marque': val('f-marque'), 'Email': val('f-email'),
-      'Abonnés actifs': val('f-audience') || '…', 'Ce qu\'il aimerait changer': val('f-envie'), 'Un de ses emails': val('f-exemple') || '…'
-    };
-    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (res) { if (!r.ok || res.success !== true) throw new Error(res.message || ('HTTP ' + r.status)); }); })
-      .then(function () { form.hidden = true; envoi.hidden = false; envoi.scrollIntoView({ block: 'center', behavior: calme ? 'auto' : 'smooth' }); })
-      .catch(function (err) {
-        try { console.warn('Demande non envoyée :', err && err.message); } catch (e2) {}
-        bouton.disabled = false; bouton.innerHTML = LIBELLE;
-        var lien = 'mailto:' + ADRESSE + '?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(texte());
-        erreur.innerHTML = '';
-        erreur.appendChild(document.createTextNode("The request didn't go through. You can "));
-        var a = document.createElement('a'); a.href = lien; a.textContent = "send it from your own email";
-        erreur.appendChild(a);
-        erreur.appendChild(document.createTextNode(", it's already written."));
-        erreur.hidden = false;
-      });
-  });
-})();
-</script>
+<footer class="pied"><div class="wrap">
+<span>© 2026 Oscar Marchand EI · SIREN 924 921 158 · Paris</span>
+<nav aria-label="Footer"><a href="about">My story</a><a href="mentions-legales">Legal notice</a><a href="mentions-legales#confidentialite">Privacy</a><a href="https://oscomarch.com" target="_blank" rel="noopener">oscomarch.com</a></nav>
+</div></footer>
+<script>window.TXT = {"locale": "en-GB", "manque": "Missing your name, your brand, what you'd like to change, or a valid email.", "envoi": "Sending…", "rate": "The request didn't go through. You can ", "lien": "send it from your own email", "fin": ", it's already written.", "sujet": "Nouvelle demande (EN) · ", "lettre_tete": "Hi Oscar,", "l_nom": "Name", "l_marque": "Brand", "l_email": "Email", "l_abo": "Active subscribers", "l_envie": "I'd like to change", "l_ex": "One of our emails", "l_fin": "Thanks"};</script>
+<script src="/site.js" defer></script>
 </body>
 </html>
